@@ -24,3 +24,14 @@ a {
     background: black;
   }
 }
+
+:root {
+  --text-color-white: #fefefe;
+
+  --background-color-github-dark-primary: #1f2428;
+  --background-color-github-dark-secondary: #24292e;
+
+  --dot-header-color-primary: #f1fa8c;
+  --dot-header-color-secondary: #50fa7b;
+  --dot-header-color-third: #f95556;
+}
