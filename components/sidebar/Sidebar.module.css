@@ -1,3 +1,41 @@
-.main {
+.container {
   width: 5%;
+  background-color: var(--sidebar-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top__items {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.bottom__items {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.active {
+  border-left: 2px solid var(--sidebar-item-active);
+}
+
+.icon {
+  height: 48px;
+  width: 48px;
+  padding: 0.65rem 0;
+  display: block;
+  margin: 0 auto;
+}
+
+.icon:hover {
+  background-color: var(--background-color-github-dark-primary);
 }
