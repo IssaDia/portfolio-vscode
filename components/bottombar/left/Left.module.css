@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: var(--bottombar-font-size);
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.sourcecontrol {
+  display: flex;
+  flex-direction: row;
+  margin-right: 5px;
+  cursor: pointer;
+  padding: 0 4px 0 4px;
+}
+
+.sourcecontrol:hover {
+  background-color: var(--background-color-hover);
+}
+
+.warnings {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 4px 0 4px;
+}
+
+.warnings:hover {
+  background-color: var(--background-color-hover);
+}
+
+.error {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.error svg {
+  margin-right: 5px;
+}
+
+.warning {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.warning svg {
+  margin-right: 5px;
+}

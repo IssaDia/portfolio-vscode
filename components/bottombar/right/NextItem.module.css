@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  font-size: var(--bottombar-font-size);
+  padding: 0 4px 0 4px;
+}
+
+.container:hover {
+  background-color: var(--background-color-hover);
+}
