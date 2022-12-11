@@ -3,5 +3,10 @@
   border: 1px solid #eaeaea;
   height: 30px;
   display: flex;
-  flex-grow: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color-github-dark-primary);
+  color: var(--text-color-white);
+  font-size: 12px;
 }
