@@ -3,6 +3,11 @@
   flex-direction: row;
   font-size: var(--bottombar-font-size);
   padding: 0 4px 0 4px;
+  cursor: pointer;
+}
+
+.container svg {
+  margin-right: 5px;
 }
 
 .container:hover {
