@@ -1,4 +1,4 @@
-import Footer from '../footer/Footer'
+import Bottombar from '../bottombar/Bottombar'
 import Header from '../header/Header'
 import styles from './Layout.module.css'
 import Sidebar from '../sidebar/Sidebar'
@@ -14,7 +14,7 @@ const Layout = () => {
         <Menu />
         <Main />
       </div>
-      <Footer />
+      <Bottombar />
     </div>
   )
 }

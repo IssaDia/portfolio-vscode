@@ -1,0 +1,11 @@
+.container {
+  padding: 0 4px 0 4px;
+}
+
+.container:hover {
+  background-color: var(--background-color-hover);
+}
+
+.bellicon {
+  margin-top: 11px;
+}

@@ -2,13 +2,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 * {
@@ -26,10 +19,17 @@ a {
 }
 
 :root {
-  --text-color-white: #fefefe;
+  --text-color-white: #efefef;
+
+  --bottombar-font-size: 12px;
 
   --background-color-github-dark-primary: #1f2428;
   --background-color-github-dark-secondary: #24292e;
+  --background-color-github-dark-third: #24292e;
+  --background-color-hover: #4f4f52;
+
+  --bottombar-bg: #24292e;
+  --bottombar-border: #1b1f23;
 
   --dot-header-color-primary: #f1fa8c;
   --dot-header-color-secondary: #50fa7b;

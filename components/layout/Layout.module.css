@@ -6,6 +6,6 @@
 .main {
   width: 100%;
   border: 1px solid #eaeaea;
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 50px);
   display: flex;
 }
