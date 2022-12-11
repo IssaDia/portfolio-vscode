@@ -1,5 +1,6 @@
 .container {
   padding: 0 4px 0 4px;
+  cursor: pointer;
 }
 
 .container:hover {
@@ -7,5 +8,5 @@
 }
 
 .bellicon {
-  margin-top: 11px;
+  margin-top: 14px;
 }
