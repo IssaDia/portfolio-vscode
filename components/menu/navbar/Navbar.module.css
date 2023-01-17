@@ -1,0 +1,15 @@
+.chevron__close {
+  cursor: pointer;
+}
+
+.chevron__open {
+  transform: rotate(90deg);
+}
+
+.title__container {
+  display: flex;
+}
+
+.title__container p {
+  text-transform: uppercase;
+}
