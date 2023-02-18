@@ -1,18 +1,25 @@
+import React, { ReactNode } from 'react'
 import Bottombar from '../bottombar/Bottombar'
-import Header from '../header/Header'
-import styles from './Layout.module.css'
-import Sidebar from '../sidebar/Sidebar'
-import Menu from '../menu/Menu'
+import Topbar from '../topbar/Topbar'
 import Main from '../main/Main'
+import Menu from '../menu/Menu'
+import Sidebar from '../sidebar/Sidebar'
+import styles from './Layout.module.css'
 
-const Layout = () => {
+interface Props {
+  children?: ReactNode
+}
+
+const Layout = ({ children }: Props) => {
   return (
     <div className={styles.container}>
-      <Header />
+      <div className={styles.container__topbar}>
+        <Topbar />
+      </div>
       <div className={styles.main}>
         <Sidebar />
         <Menu />
-        <Main />
+        <Main>{children}</Main>
       </div>
       <Bottombar />
     </div>

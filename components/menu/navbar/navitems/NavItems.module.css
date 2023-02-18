@@ -1,0 +1,11 @@
+.container {
+  margin: 10px 15px;
+}
+
+.navItems__container {
+  display: flex;
+}
+
+.navItems__image {
+  margin: 3px 5px;
+}

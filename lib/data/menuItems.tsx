@@ -1,6 +1,6 @@
-import sidebarNavItems from '../interfaces/sidebarNavItems'
+import MenuItemI from '../interfaces/MenuItemI'
 
-export const sidebarTopItems: sidebarNavItems[] = [
+const MenuItemsData: MenuItemI[] = [
   {
     image: 'react_icon',
     name: 'home.jsx',
@@ -23,12 +23,14 @@ export const sidebarTopItems: sidebarNavItems[] = [
   },
   {
     image: 'json_icon',
-    name: 'articles.html',
+    name: 'articles.json',
     path: '/articles',
   },
   {
     image: 'markdown_icon',
-    name: 'github.html',
+    name: 'github.md',
     path: '/github',
   },
 ]
+
+export default MenuItemsData

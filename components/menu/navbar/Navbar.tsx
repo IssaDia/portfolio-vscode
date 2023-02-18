@@ -7,7 +7,7 @@ const Portfolio = () => {
   const [toggle, setToggle] = useToggle()
 
   return (
-    <>
+    <div className={styles.container}>
       <div onClick={setToggle} className={styles.title__container}>
         <ChevronRight
           className={toggle ? styles.chevron__open : styles.chevron__close}
@@ -15,7 +15,7 @@ const Portfolio = () => {
         <p>portfolio</p>
       </div>
       {toggle && <NavItems />}
-    </>
+    </div>
   )
 }
 
