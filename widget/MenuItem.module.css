@@ -1,0 +1,16 @@
+.container {
+  cursor: pointer;
+  margin: 10px 15px auto;
+  display: flex;
+}
+
+.container p {
+  color: var(--text-color-white);
+  margin-left: 5px;
+}
+
+.container a {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+}

@@ -1,0 +1,6 @@
+.primary {
+  color: var(--text-color-white);
+  background-color: var(--background-content-orange);
+  padding: 10px 10px;
+  text-decoration: none;
+}
