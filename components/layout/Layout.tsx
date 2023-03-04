@@ -19,7 +19,7 @@ const Layout = ({ children }: Props) => {
       <div className={styles.main}>
         <Sidebar />
         <Menu />
-        <Main>{children}</Main>
+        <Main children={children}/>
       </div>
       <Bottombar />
     </div>

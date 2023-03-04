@@ -1,5 +1,5 @@
 .container {
-  width: 5%;
+  width: 5vw;
   background-color: var(--sidebar-bg);
   display: flex;
   flex-direction: column;
