@@ -1,18 +1,16 @@
-import Buttons from './buttons/Buttons'
-import styles from './Topbar.module.css'
-import Navbar from './navbar/Navbar'
-import Presentation from './presentation/Presentation'
+import Buttons from "./buttons/Buttons";
+import styles from "./Topbar.module.css";
+import Navbar from "./navbar/Navbar";
+import Presentation from "./presentation/Presentation";
+import SearchBar from "./searchBar/SearchBar";
 
-const Header = () => {
+const Topbar = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.navbar}>
-        <Navbar />
-      </div>
-      <Presentation />
       <Buttons />
+      <SearchBar />
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Topbar;

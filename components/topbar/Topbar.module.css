@@ -1,12 +1,9 @@
 .container {
   width: 100%;
   border: 1px solid #000000;
-  height: 30px;
+  height: 40px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+
   align-items: center;
-  background-color: var(--background-color-github-dark-primary);
-  color: var(--text-color-white);
-  font-size: 12px;
 }

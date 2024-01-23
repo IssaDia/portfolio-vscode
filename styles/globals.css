@@ -32,4 +32,7 @@ body,
   --dot-header-color-third: #f95556;
 
   --background-content-orange: #f9816c;
+  --background-content-transparent: transparent;
+
+  --button-text-size: 18px;
 }

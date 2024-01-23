@@ -1,6 +1,6 @@
 .container {
   color: var(--text-color-white);
-  margin: 20px;
+
   display: flex;
   place-items: center;
 }
@@ -22,7 +22,7 @@
     width: 0;
   }
   to {
-    width: 100%;
+    width: 50%;
   }
 }
 
