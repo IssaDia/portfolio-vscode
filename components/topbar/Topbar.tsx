@@ -6,9 +6,9 @@ import SearchBar from "./searchBar/SearchBar";
 
 const Topbar = () => {
   return (
-    <div className={styles.container}>
+    <div className="h-12 w-full bg-topbar-background grid grid-cols-3 content-center">
       <Buttons />
-      <SearchBar />
+      {/* <SearchBar /> */}
     </div>
   );
 };

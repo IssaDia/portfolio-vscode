@@ -12,16 +12,16 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   return (
-    <div className={styles.container}>
-      <div className={styles.container__topbar}>
+    <div className="">
+      <div className="">
         <Topbar />
       </div>
-      <div className={styles.main}>
-        <Main children={children} />
+      {/* <div className="">
+        <Main children="" />
         <Menu />
         <Sidebar />
       </div>
-      <Bottombar />
+      <Bottombar /> */}
     </div>
   );
 };

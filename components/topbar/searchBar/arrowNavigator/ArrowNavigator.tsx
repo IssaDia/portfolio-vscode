@@ -8,6 +8,7 @@ const ArrowNavigator: React.FC = () => {
     <div className={styles.container}>
       <FontAwesomeIcon icon={faArrowLeft} className="arrow left" />
       <FontAwesomeIcon icon={faArrowRight} className="arrow right" />
+      <h1 className="text-3xl font-bold underline">Hello world!1</h1>
     </div>
   );
 };
