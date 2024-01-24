@@ -1,10 +1,10 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode } from "react";
 
-import styles from './Main.module.css'
-import MainMenu from './mainMenu/MainMenu'
+import styles from "./Main.module.css";
+import MainMenu from "./mainMenu/MainMenu";
 
 interface Props {
-  children?: ReactNode
+  children?: ReactNode;
 }
 const Main = ({ children }: Props) => {
   return (
@@ -12,7 +12,7 @@ const Main = ({ children }: Props) => {
       <MainMenu />
       {children}
     </div>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;

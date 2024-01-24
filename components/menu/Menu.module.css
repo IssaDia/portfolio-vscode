@@ -6,6 +6,8 @@
   background-color: var(--background-color-github-dark-primary);
 }
 .explorer {
+  display: flex;
+  align-items: flex-end;
   padding: 10px;
   text-transform: uppercase;
   margin-bottom: 10px;

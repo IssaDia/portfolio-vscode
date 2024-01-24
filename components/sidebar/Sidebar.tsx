@@ -1,14 +1,14 @@
-import Link from 'next/link'
+import Link from "next/link";
 import {
   sidebarTopItems,
   sidebarBottomItems,
-} from '../../lib/data/sidebarItems'
-import styles from './Sidebar.module.css'
+} from "../../lib/data/sidebarItems";
+import styles from "./Sidebar.module.css";
 
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 
 const Sidebar = () => {
-  const router = useRouter()
+  const router = useRouter();
   const sidebarTopItemsComp = sidebarTopItems.map(({ Icon, path }) => {
     return (
       <Link key={path} href={path}>
@@ -21,14 +21,14 @@ const Sidebar = () => {
             className={styles.icon}
             fill={
               router.pathname === path
-                ? 'rgb(225, 228, 232)'
-                : 'rgb(106, 115, 125)'
+                ? "rgb(225, 228, 232)"
+                : "rgb(106, 115, 125)"
             }
           />
         </div>
       </Link>
-    )
-  })
+    );
+  });
 
   const sidebarBottomItemsComp = sidebarBottomItems.map(
     ({ Icon, path }, index) => {
@@ -43,21 +43,21 @@ const Sidebar = () => {
               className={styles.icon}
               fill={
                 router.pathname === path
-                  ? 'rgb(225, 228, 232)'
-                  : 'rgb(106, 115, 125)'
+                  ? "rgb(225, 228, 232)"
+                  : "rgb(106, 115, 125)"
               }
             />
           </div>
         </Link>
-      )
+      );
     }
-  )
+  );
   return (
     <div className={styles.container}>
       <div className={styles.top__items}>{sidebarTopItemsComp}</div>
       <div className={styles.bottom__items}>{sidebarBottomItemsComp}</div>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
