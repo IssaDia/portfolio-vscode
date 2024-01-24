@@ -14,6 +14,8 @@ module.exports = {
           firstButton: "#fe5f57",
           secondButton: "#febc2d",
           thirdButton: "#27c93f", // Replace with your desired color code
+          firstVariant: "#a4a4a4",
+          secondVariant: "#666666",
         },
       },
     },
