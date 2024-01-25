@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply h-full;
+  }
+}
+
+html,
+body {
+  margin: 0;
+}
+
+#__next {
+  position: absolute;
+  inset: 0;
+}

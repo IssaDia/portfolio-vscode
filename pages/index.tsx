@@ -12,7 +12,6 @@ export default function HomePage() {
         <BackgroundText text="I BUILD WEBSITES" />
         <Title surname="issa" lastname="dia" />
         <Text text="Front end Web Developer" />
-        <Buttons />
       </HomeWrapper>
     </div>
   );

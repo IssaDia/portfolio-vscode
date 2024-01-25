@@ -3,7 +3,6 @@ import {
   sidebarTopItems,
   sidebarBottomItems,
 } from "../../lib/data/sidebarItems";
-import styles from "./Sidebar.module.css";
 
 import { useRouter } from "next/router";
 
@@ -13,12 +12,12 @@ const Sidebar = () => {
     return (
       <Link key={path} href={path}>
         <div
-          className={`${styles.item__container} ${
-            router.pathname === path && styles.active
-          }  `}
+        // className={`${styles.item__container} ${
+        //   router.pathname === path && styles.active
+        // }  `}
         >
           <Icon
-            className={styles.icon}
+            // className={styles.icon}
             fill={
               router.pathname === path
                 ? "rgb(225, 228, 232)"
@@ -35,12 +34,12 @@ const Sidebar = () => {
       return (
         <Link key={index} href={path}>
           <div
-            className={`${styles.item__container} ${
-              router.pathname === path && styles.active
-            }  `}
+          // className={`${styles.item__container} ${
+          //   router.pathname === path && styles.active
+          // }  `}
           >
             <Icon
-              className={styles.icon}
+              className=""
               fill={
                 router.pathname === path
                   ? "rgb(225, 228, 232)"
@@ -53,9 +52,9 @@ const Sidebar = () => {
     }
   );
   return (
-    <div className={styles.container}>
-      <div className={styles.top__items}>{sidebarTopItemsComp}</div>
-      <div className={styles.bottom__items}>{sidebarBottomItemsComp}</div>
+    <div className="flex flex-col justify-betwwen py-4 px-4 h-full w-1/10">
+      <div className="h-8/10">{sidebarTopItemsComp}</div>
+      <div className="h-2/10">{sidebarBottomItemsComp}</div>
     </div>
   );
 };

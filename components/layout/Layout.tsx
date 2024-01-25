@@ -12,17 +12,15 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   return (
-    <div className="">
-      <div className="">
-        <Topbar />
-      </div>
-      {/* <div className="">
-        <Main children="" />
-        <Menu />
-        <Sidebar />
-      </div>
-      <Bottombar /> */}
-    </div>
+    <React.Fragment>
+      <Topbar />
+      <Sidebar />
+
+      {/* <Main children="" />
+        <Menu /> */}
+
+      {/* <Bottombar /> */}
+    </React.Fragment>
   );
 };
 
