@@ -7,22 +7,18 @@ import {
 
 const ArrowNavigator: React.FC = () => {
   return (
-    <div>
-      <div className="flex flex-row  items-center">
-        <div className="h-6 w-6 hover:brightness-125 cursor-pointer">
-          <FontAwesomeIcon
-            icon={faArrowLeftLong}
-            className="arrow left text-xl text-topbar-firstVariant"
-          />
-        </div>
+    <div className="flex flex-row space-x-2  items-center">
+      <div className="h-6 w-6 hover:border hover:border-topbar-secondVariant hover:bg-opacity-20 rounded-md hover:brightness-125 cursor-pointer">
+        <FontAwesomeIcon
+          icon={faArrowLeftLong}
+          className="arrow left text-xl text-topbar-firstVariant brightness-125 transform scale-x-75"
+        />
       </div>
-      <div>
-        <div className="h-6 w-6 cursor-pointer">
-          <FontAwesomeIcon
-            icon={faArrowRightLong}
-            className="arrow right text-xl text-topbar-secondVariant"
-          />
-        </div>
+      <div className="h-6 w-6 cursor-pointer">
+        <FontAwesomeIcon
+          icon={faArrowRightLong}
+          className="arrow right text-xl text-topbar-secondVariant transform scale-x-75"
+        />
       </div>
     </div>
   );

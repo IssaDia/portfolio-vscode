@@ -4,7 +4,7 @@ import SearchInput from "./searchInput/SearchInput";
 
 const SearchBar = () => {
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row w-full">
       <ArrowNavigator />
       <SearchInput />
     </div>
