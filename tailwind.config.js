@@ -17,6 +17,12 @@ module.exports = {
           firstVariant: "#a4a4a4",
           secondVariant: "#666666",
         },
+        sidebar: {
+          background: "#3c3c3c",
+          secondVariant: "#666666",
+          firstVariant: "#a4a4a4",
+          thirdVariant: "#7d7d7d",
+        },
       },
     },
   },

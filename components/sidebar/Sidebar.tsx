@@ -6,18 +6,31 @@ import {
 
 import { useRouter } from "next/router";
 
+type SidebarItem = {
+  Icon: React.ComponentType<{ width: string; height: string; fill: string }>;
+  path: string;
+};
+
 const Sidebar = () => {
   const router = useRouter();
-  const sidebarTopItemsComp = sidebarTopItems.map(({ Icon, path }) => {
+
+  const renderIconWithLine = (
+    Icon: React.ComponentType<{ width: string; height: string; fill: string }>,
+    path: string
+  ) => {
+    const isActive = router.pathname === path;
+    const lineColor = isActive ? "bg-sidebar-secondVariant" : "bg-transparent"; // Active color or transparent
+
     return (
-      <Link key={path} href={path}>
+      <div className="relative flex items-center">
         <div
-        // className={`${styles.item__container} ${
-        //   router.pathname === path && styles.active
-        // }  `}
-        >
+          className={`w-1 h-16 ${lineColor} absolute brightness-200 right-11`}
+        ></div>
+
+        <div className="brightness-110">
           <Icon
-            // className={styles.icon}
+            width="30"
+            height="30"
             fill={
               router.pathname === path
                 ? "rgb(225, 228, 232)"
@@ -25,9 +38,19 @@ const Sidebar = () => {
             }
           />
         </div>
-      </Link>
+      </div>
     );
-  });
+  };
+
+  const sidebarTopItemsComp = sidebarTopItems.map(
+    ({ Icon, path }: SidebarItem) => {
+      return (
+        <Link key={path} href={path}>
+          {renderIconWithLine(Icon, path)}
+        </Link>
+      );
+    }
+  );
 
   const sidebarBottomItemsComp = sidebarBottomItems.map(
     ({ Icon, path }, index) => {
@@ -39,6 +62,8 @@ const Sidebar = () => {
           // }  `}
           >
             <Icon
+              width="30"
+              height="30"
               className=""
               fill={
                 router.pathname === path
@@ -52,9 +77,13 @@ const Sidebar = () => {
     }
   );
   return (
-    <div className="flex flex-col justify-betwwen py-4 px-4 h-full w-1/10">
-      <div className="h-8/10">{sidebarTopItemsComp}</div>
-      <div className="h-2/10">{sidebarBottomItemsComp}</div>
+    <div className="flex flex-col justify-between h-full w-full bg-sidebar-background p-4 relative">
+      <div className="grid grid-flow-row justify-around h-96">
+        {sidebarTopItemsComp}
+      </div>
+      <div className="grid grid-flow-row justify-around h-48">
+        {sidebarBottomItemsComp}
+      </div>
     </div>
   );
 };

@@ -1,12 +1,11 @@
 import menuItemsData from "../../../lib/data/menuItems";
-import styles from "./MainMenu.module.css";
 import MenuItem from "../../../widget/MenuItem";
 import { capitalizeFirstLetter } from "../../../utils/helpers/capitalizeFirstLetter";
 
 const MainMenu = () => {
   const menuItems = menuItemsData.map((item, i) => {
     return (
-      <div className={styles.container__item} key={i}>
+      <div className="" key={i}>
         <MenuItem
           name={capitalizeFirstLetter(item.name)}
           path={item.path}
@@ -15,7 +14,7 @@ const MainMenu = () => {
       </div>
     );
   });
-  return <div className={styles.container}>{menuItems}</div>;
+  return <div className="flex flex-row">{menuItems}</div>;
 };
 
 export default MainMenu;

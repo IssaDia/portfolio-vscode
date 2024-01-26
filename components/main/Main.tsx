@@ -8,9 +8,8 @@ interface Props {
 }
 const Main = ({ children }: Props) => {
   return (
-    <div className={styles.main}>
+    <div className="">
       <MainMenu />
-      {children}
     </div>
   );
 };

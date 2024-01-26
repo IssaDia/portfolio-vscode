@@ -12,15 +12,21 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   return (
-    <React.Fragment>
+    <div className="flex flex-col h-screen">
       <Topbar />
-      <Sidebar />
-
-      {/* <Main children="" />
-        <Menu /> */}
-
-      {/* <Bottombar /> */}
-    </React.Fragment>
+      <div className="flex flex-row h-screen">
+        <div className="flex-none w-16">
+          <Sidebar />
+        </div>
+        <div className="flex-none w-4/12">
+          <Menu />
+        </div>
+        <div className="grow">
+          <Main>{children}</Main>
+        </div>
+      </div>
+      <Bottombar />
+    </div>
   );
 };
 
