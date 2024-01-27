@@ -8,8 +8,9 @@ interface Props {
 }
 const Main = ({ children }: Props) => {
   return (
-    <div className="">
+    <div className="bg-main-background h-full text-white">
       <MainMenu />
+      {children}
     </div>
   );
 };

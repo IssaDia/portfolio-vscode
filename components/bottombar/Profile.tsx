@@ -1,3 +1,5 @@
+import SkillList from "./SkillList";
+
 interface SoftSkillProps {
   problemSolving: boolean;
   communication: boolean;
@@ -15,7 +17,6 @@ interface TechSkillProps {
   react: boolean;
   vue: boolean;
   git: boolean;
-  responsiveDesign: boolean;
   testing: boolean;
   apiIntegration: boolean;
 }
@@ -32,13 +33,9 @@ const Profile = ({
       <h1>Issa Dia</h1>
       <h2>FrontendDeveloper</h2>
       <h3>Technical Skills</h3>
-      {Object.entries(techSkills).map(([techSkill]) => (
-        <p key={techSkill}>{techSkill}</p>
-      ))}
+      <SkillList skills={techSkills} />
       <h3>Soft Skills</h3>
-      {Object.entries(softSkills).map(([softSkill]) => (
-        <p key={softSkill}>{softSkill}</p>
-      ))}
+      <SkillList skills={softSkills} />
     </div>
   );
 };

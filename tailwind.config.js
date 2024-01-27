@@ -28,6 +28,13 @@ module.exports = {
           firstVariant: "#a4a4a4",
           secondVariant: "#666666",
         },
+        main: {
+          background: "#1e1e1e",
+          firstVariant: "#a4a4a4",
+        },
+        codeBlock: {
+          firstVariant: "#b37aae",
+        },
         bottombar: {
           background: "#007acc",
         },
