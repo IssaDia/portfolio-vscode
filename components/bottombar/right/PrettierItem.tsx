@@ -1,15 +1,13 @@
-import CheckIcon from '../../icons/CheckIcon'
-import styles from './PrettierItem.module.css'
+import CheckIcon from "../../icons/CheckIcon";
+import styles from "./PrettierItem.module.css";
 
 const PrettierItem = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.checkicon}>
-        <CheckIcon />
-      </div>
+    <>
+      <CheckIcon />
       <p>Prettier</p>
-    </div>
-  )
-}
+    </>
+  );
+};
 
-export default PrettierItem
+export default PrettierItem;

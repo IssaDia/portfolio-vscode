@@ -1,12 +1,12 @@
-import BellIcon from '../../icons/BellIcon'
-import styles from './BellItem.module.css'
+import BellIcon from "../../icons/BellIcon";
+import styles from "./BellItem.module.css";
 
 const BellItem = () => {
   return (
-    <div className={styles.container}>
-      <BellIcon className={styles.bellicon} />
-    </div>
-  )
-}
+    <>
+      <BellIcon />
+    </>
+  );
+};
 
-export default BellItem
+export default BellItem;

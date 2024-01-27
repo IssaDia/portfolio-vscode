@@ -28,6 +28,9 @@ module.exports = {
           firstVariant: "#a4a4a4",
           secondVariant: "#666666",
         },
+        bottombar: {
+          background: "#007acc",
+        },
       },
     },
   },
