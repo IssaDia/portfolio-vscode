@@ -4,7 +4,6 @@ import Topbar from "../topbar/Topbar";
 import Main from "../main/Main";
 import Menu from "../menu/Menu";
 import Sidebar from "../sidebar/Sidebar";
-import styles from "./Layout.module.css";
 
 interface Props {
   children?: ReactNode;
@@ -18,7 +17,7 @@ const Layout = ({ children }: Props) => {
         <div className="flex-none w-16">
           <Sidebar />
         </div>
-        <div className="flex-none w-4/12">
+        <div className="flex-none w-2/12">
           <Menu />
         </div>
         <div className="grow">

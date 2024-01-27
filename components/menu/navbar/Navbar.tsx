@@ -1,22 +1,30 @@
-import useToggle from '../../../hooks/useToggle'
-import ChevronRight from '../../icons/ChevronRight'
-import styles from './Navbar.module.css'
-import NavItems from './navitems/NavItems'
+import useToggle from "../../../hooks/useToggle";
+import ChevronRight from "../../icons/ChevronRight";
+import Summary from "./summary/Summary";
 
 const Portfolio = () => {
-  const [toggle, setToggle] = useToggle()
+  const [toggle, setToggle] = useToggle();
 
   return (
-    <div className={styles.container}>
-      <div onClick={setToggle} className={styles.title__container}>
-        <ChevronRight
-          className={toggle ? styles.chevron__open : styles.chevron__close}
-        />
-        <p>portfolio</p>
-      </div>
-      {toggle && <NavItems />}
-    </div>
-  )
-}
+    <>
+      <div className={`border-b border-menu-secondVariant pb-1`}>
+        <div
+          onClick={setToggle}
+          className="flex flex-row items-center text-menu-firstVariant cursor-pointer"
+        >
+          <ChevronRight
+            className={`transition-transform duration-200  mr-2 ${
+              toggle ? "rotate-90" : ""
+            }`}
+          />
+          <p className="uppercase text-sm brightness-150">portfolio</p>
+        </div>
 
-export default Portfolio
+        {/* NavItems toggled */}
+        {toggle && <Summary />}
+      </div>
+    </>
+  );
+};
+
+export default Portfolio;

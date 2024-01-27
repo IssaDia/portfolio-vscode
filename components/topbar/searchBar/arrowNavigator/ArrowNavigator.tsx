@@ -1,13 +1,14 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowLeftLong,
   faArrowRightLong,
+  faFolder,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 
 const ArrowNavigator: React.FC = () => {
   return (
-    <div className="flex flex-row space-x-2  items-center">
+    <div className="flex flex-row space-x-2 items-center">
       <div className="h-6 w-6 hover:border hover:border-topbar-secondVariant hover:bg-opacity-20 rounded-md hover:brightness-125 cursor-pointer">
         <FontAwesomeIcon
           icon={faArrowLeftLong}

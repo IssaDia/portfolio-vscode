@@ -1,58 +1,26 @@
-import { useRouter } from 'next/router'
-import Link, { LinkProps } from 'next/link'
-import React, { PropsWithChildren, useState, useEffect } from 'react'
+// ActiveLink.js
+import { useRouter } from "next/router";
+import React, { ReactElement } from "react";
 
-type ActiveLinkProps = LinkProps & {
-  className?: string
-  activeClassName: string
+interface ActiveLinkProps {
+  children: (isActive: boolean) => ReactElement;
+  href: string;
+  activeClassName?: string;
 }
 
-const ActiveLink = ({
+const ActiveLink: React.FC<ActiveLinkProps> = ({
   children,
-  activeClassName,
-  className,
-  ...props
-}: PropsWithChildren<ActiveLinkProps>) => {
-  const { asPath, isReady } = useRouter()
-  const [computedClassName, setComputedClassName] = useState(className)
+  href,
+  activeClassName = "",
+}) => {
+  const { asPath } = useRouter();
+  const isActive = asPath === href;
 
-  useEffect(() => {
-    // Check if the router fields are updated client-side
-    if (isReady) {
-      // Dynamic route will be matched via props.as
-      // Static route will be matched via props.href
-      const linkPathname = new URL(
-        (props.as || props.href) as string,
-        location.href
-      ).pathname
+  if (typeof children === "function") {
+    return children(isActive);
+  }
 
-      // Using URL().pathname to get rid of query and hash
-      const activePathname = new URL(asPath, location.href).pathname
+  return <>{children}</>; // Fallback for non-function children, though your use case might not need this
+};
 
-      const newClassName =
-        linkPathname === activePathname
-          ? `${className} ${activeClassName}`.trim()
-          : className
-
-      if (newClassName !== computedClassName) {
-        setComputedClassName(newClassName)
-      }
-    }
-  }, [
-    asPath,
-    isReady,
-    props.as,
-    props.href,
-    activeClassName,
-    className,
-    computedClassName,
-  ])
-
-  return (
-    <Link className={computedClassName} {...props}>
-      {children}
-    </Link>
-  )
-}
-
-export default ActiveLink
+export default ActiveLink;
