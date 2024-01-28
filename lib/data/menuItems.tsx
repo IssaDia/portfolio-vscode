@@ -1,36 +1,36 @@
-import MenuItemI from '../interfaces/MenuItemI'
+import MenuItemI from "../interfaces/MenuItemI";
 
 const MenuItemsData: MenuItemI[] = [
   {
-    image: 'react_icon',
-    name: 'home.jsx',
-    path: '/',
+    image: "react_icon",
+    name: "home.tsx",
+    path: "/",
   },
   {
-    image: 'html_icon',
-    name: 'about.html',
-    path: '/about',
+    image: "html_icon",
+    name: "about.html",
+    path: "/about",
   },
   {
-    image: 'css_icon',
-    name: 'contact.css',
-    path: '/contact',
+    image: "css_icon",
+    name: "contact.css",
+    path: "/contact",
   },
   {
-    image: 'js_icon',
-    name: 'projects.js',
-    path: '/projects',
+    image: "js_icon",
+    name: "projects.js",
+    path: "/projects",
   },
   {
-    image: 'json_icon',
-    name: 'articles.json',
-    path: '/articles',
+    image: "json_icon",
+    name: "articles.json",
+    path: "/articles",
   },
   {
-    image: 'markdown_icon',
-    name: 'github.md',
-    path: '/github',
+    image: "markdown_icon",
+    name: "github.md",
+    path: "/github",
   },
-]
+];
 
-export default MenuItemsData
+export default MenuItemsData;

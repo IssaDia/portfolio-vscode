@@ -10,30 +10,28 @@ const Summary = () => {
   const [toggle, setToggle] = useToggle();
 
   return (
-    <div className="">
-      <div className="">
-        <div
-          onClick={setToggle}
-          className="flex flex-row items-center text-menu-firstVariant cursor-pointer pl-2"
-        >
-          <ChevronRight
-            className={`transition-transform duration-200 cursor-pointer mr-2 ${
-              toggle ? "rotate-90" : ""
-            }`}
-          />
+    <>
+      <div
+        onClick={setToggle}
+        className="flex flex-row items-center text-menu-firstVariant cursor-pointer pl-2"
+      >
+        <ChevronRight
+          className={`transition-transform duration-200 cursor-pointer mr-2 ${
+            toggle ? "rotate-90" : ""
+          }`}
+        />
 
-          {toggle ? (
-            <FontAwesomeIcon icon={faFolderOpen} className="mr-2" />
-          ) : (
-            <FontAwesomeIcon icon={faFolder} className="mr-2" />
-          )}
+        {toggle ? (
+          <FontAwesomeIcon icon={faFolderOpen} className="mr-2" />
+        ) : (
+          <FontAwesomeIcon icon={faFolder} className="mr-2" />
+        )}
 
-          <p className="text-sm brightness-150 py-1">summary</p>
-        </div>
-
-        {toggle && <NavItems />}
+        <p className="text-sm brightness-150 py-1">summary</p>
       </div>
-    </div>
+
+      {toggle && <NavItems />}
+    </>
   );
 };
 

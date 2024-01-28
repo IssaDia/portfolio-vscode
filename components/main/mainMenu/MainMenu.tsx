@@ -1,11 +1,11 @@
 import menuItemsData from "../../../lib/data/menuItems";
 import MenuItem from "../../../widget/MenuItem";
-import { capitalizeFirstLetter } from "../../../utils/helpers/capitalizeFirstLetter";
+import { capitalizeFirstLetter } from "../../../utils/helpers/helpers";
 
 const MainMenu = () => {
   const menuItems = menuItemsData.map((item, i) => {
     return (
-      <div className="" key={i}>
+      <div key={i}>
         <MenuItem
           name={capitalizeFirstLetter(item.name)}
           path={item.path}
