@@ -9,7 +9,6 @@ const codeSnippet = `/* join me on my journey */
   linkedin : https://www.linkedin.com/in/issa-dia-dev/
   x : https://twitter.com/IssDiaDev
   medium : https://medium.com/@issadia
-
 }`;
 
 const ContactPage = () => {
@@ -19,6 +18,7 @@ const ContactPage = () => {
         <CodeBlock
           numberOfLines={codeSnippet.split("\n").length}
           codeSnippet={codeSnippet}
+          type="css"
         />
       </div>
     </>

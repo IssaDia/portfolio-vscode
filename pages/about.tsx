@@ -22,6 +22,7 @@ const About = () => {
       <CodeBlock
         numberOfLines={codeSnippet.split("\n").length}
         codeSnippet={codeSnippet}
+        type="html"
       />
     </div>
   );

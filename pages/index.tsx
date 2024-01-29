@@ -47,6 +47,7 @@ export default function Home() {
       <CodeBlock
         numberOfLines={codeSnippet.split("\n").length}
         codeSnippet={codeSnippet}
+        type="tsx"
       />
     </div>
   );

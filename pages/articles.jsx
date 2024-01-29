@@ -1,15 +1,18 @@
 const ArticlesPage = () => {
   return (
     <>
-      <div>Articles</div>
+      <div>
+        <div>Recent posts from Medium</div>
+      </div>
+      <div></div>
     </>
-  )
-}
+  );
+};
 
 export async function getStaticProps() {
   return {
-    props: { title: 'Articles' },
-  }
+    props: { title: "Articles" },
+  };
 }
 
-export default ArticlesPage
+export default ArticlesPage;

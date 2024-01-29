@@ -16,11 +16,11 @@ const MenuItemsData: MenuItemI[] = [
     name: "contact.css",
     path: "/contact",
   },
-  {
-    image: "js_icon",
-    name: "projects.js",
-    path: "/projects",
-  },
+  // {
+  //   image: "js_icon",
+  //   name: "projects.js",
+  //   path: "/projects",
+  // },
   {
     image: "json_icon",
     name: "articles.json",

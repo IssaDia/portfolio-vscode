@@ -20,9 +20,8 @@ export const highlightHtmlTags = (word: string) => {
 
   if (htmlTagMatch) {
     const tag = htmlTagMatch[2];
-    console.log(tag);
 
-    const color = htmlTags.includes(tag) ? "#4fc2ff" : "#4dc9b0";
+    const color = htmlTags.includes(tag) ? "#569cd6" : "#4dc9b0";
     return word.replace(tag, `<span style="color: ${color};">${tag}</span>`);
   }
   return word;
