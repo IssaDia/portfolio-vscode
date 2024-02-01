@@ -1,4 +1,4 @@
 export default interface sidebarItemsI {
-  Icon: (props: string) => JSX.Element;
+  Icon: React.ComponentType<{ width: string; height: string; fill: string }>;
   path: string;
 }
