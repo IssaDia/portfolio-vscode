@@ -1,0 +1,20 @@
+.primary {
+  color: var(--text-color-white);
+  background-color: var(--background-content-orange);
+  padding: 10px 10px;
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: var(--button-text-size);
+  margin-right: 30px;
+}
+
+.secondary {
+  color: var(--text-color-white);
+  background-color: var(--background-content-transparent);
+  border: 2px solid var(--background-content-orange);
+  padding: 10px 10px;
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: var(--button-text-size);
+  margin-right: 30px;
+}
