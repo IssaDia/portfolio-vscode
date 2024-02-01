@@ -6,7 +6,7 @@ type ButtonProps = {
   type: string;
   path: string;
 };
-const Button = ({ label, type, path }: ButtonProps) => {
+const Button = ({ label, path }: ButtonProps) => {
   return (
     <div className="">
       <Link href={path} className="">

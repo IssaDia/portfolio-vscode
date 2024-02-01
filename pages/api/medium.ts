@@ -1,8 +1,7 @@
-// pages/api/medium.js
 import { NextApiRequest, NextApiResponse } from "next";
 import Parser from "rss-parser";
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const mediumFeed = async (req: NextApiRequest, res: NextApiResponse) => {
   const parser = new Parser();
   const feedUrl = `https://medium.com/feed/@issadia`;
 
@@ -16,3 +15,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       .json({ message: "Erreur lors de la récupération des articles." });
   }
 };
+
+export default mediumFeed;

@@ -2,7 +2,7 @@ import Link from "next/link";
 import GitHubCalendar from "react-github-calendar";
 import Image from "next/image";
 
-const GithubPage = ({ repos, user }: any) => {
+const GithubPage = ({ repos, user }) => {
   console.log(user, repos);
 
   return (
@@ -34,7 +34,7 @@ const GithubPage = ({ repos, user }: any) => {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {repos.map((repo: any) => (
+          {repos.map((repo) => (
             <div key={repo.id} className="bg-sidebar-background p-4">
               <Link
                 key={repo.id}
@@ -49,7 +49,7 @@ const GithubPage = ({ repos, user }: any) => {
                 <p className="text-white text-sm">{repo.description}</p>
                 <div className="flex items-center justify-between mt-4">
                   <div className="flex items-center">
-                    {repo.topics.map((topic: string) => (
+                    {repo.topics.map((topic) => (
                       <span
                         key={topic}
                         className="bg-topbar-firstButton text-xs font-semibold mr-2 px-1.5 py-1.5 rounded dark:bg-green-700 dark:text-green-200"
@@ -98,8 +98,8 @@ export async function getStaticProps() {
   );
   let repos = await repoRes.json();
   const allowedTopics = ["javascript"];
-  repos = repos.filter((repo: any) =>
-    repo.topics.some((topic: string) => allowedTopics.includes(topic))
+  repos = repos.filter((repo) =>
+    repo.topics.some((topic) => allowedTopics.includes(topic))
   );
 
   return {
