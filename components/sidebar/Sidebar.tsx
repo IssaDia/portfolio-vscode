@@ -60,7 +60,6 @@ const Sidebar = () => {
             <Icon
               width="30"
               height="30"
-              className=""
               fill={
                 router.pathname === path
                   ? "rgb(225, 228, 232)"
