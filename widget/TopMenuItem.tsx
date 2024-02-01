@@ -12,12 +12,12 @@ const TopMenuItem = ({ image, name, path }: MenuItemI) => {
           className={`flex flex-row justify-start w-full p-2 cursor-pointer border-2 border-opacity-10 border-black  hover:bg-main-background ${
             isActive
               ? "bg-black"
-              : " bg-sidebar-background iphonePortrait:hidden"
+              : "bg-sidebar-background portrait:hidden landscape:hidden"
           } `}
         >
           <Link href={path} legacyBehavior passHref>
             <a className="block  w-full h-full ">
-              <div className="flex flex-row iphonePortrait:justify-start">
+              <div className="flex flex-row portrait:justify-start">
                 <Image
                   src={`/images/${image}.svg`}
                   alt="nav-items-logo"

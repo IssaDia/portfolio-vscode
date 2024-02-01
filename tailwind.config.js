@@ -41,13 +41,8 @@ module.exports = {
         },
       },
       screens: {
-        iphonePortrait: "375px",
-        androidPortrait: "412px",
-        iphone6Portrait: "414px",
-        androidLandscape: "684px",
-        iphoneLandscape: "734px",
-        iphone6Landscape: "667px",
-        iphone6PlusLandscape: "736px",
+        portrait: { raw: "(orientation: portrait)" },
+        landscape: { raw: "(orientation: landscape)" },
         ipadPortrait: "768px",
         ipadLandscape: "1024px",
 

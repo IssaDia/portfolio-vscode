@@ -10,7 +10,7 @@ const Buttons = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <span className="relative inline-block bg-topbar-firstButton rounded-full p-1.5 iphonePortrait:text-sm">
+      <span className="relative inline-block bg-topbar-firstButton text-red-500 rounded-full p-1.5 portrait:text-sm">
         <span
           className={` text-black ${
             isHovered ? "opacity-100" : "opacity-0"

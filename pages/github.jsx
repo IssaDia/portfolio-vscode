@@ -7,30 +7,27 @@ const GithubPage = ({ repos, user }) => {
 
   return (
     <>
-      <div className="m-8 overflow-collapse">
+      <div className="m-8 overflow-scroll portrait:w-1/5 landscape:w-2/5">
         <div className="flex flex-col items-center justify-center mb-6 bg-sidebar-background h-32 rounded-sm w-full">
-          <div className="flex items-center justify-center space-x-4 iphonePortrait:flex-col iphonePortrait:space-x-0 iphonePortrait:space-y-2">
-            <div className="flex items-center space-x-4 ">
+          <div className="flex items-center space-x-4 portrait:flex-col portrait:space-x-0 portrait:space-y-2 landscape:flex-row landscape:justify-between landscape:flex">
+            <div className="">
               <Image
                 src="/images/issa-profile-pic.JPEG"
                 alt="avatar"
                 width={80}
                 height={80}
-                className="rounded-sm iphonePortrait:hidden"
+                className="rounded-sm portrait:hidden landscape:block"
               />
-              <div className="border-r border-topbar-firstButton pr-4 iphonePortrait:border-none">
-                <div className="text-sm">{user.login}</div>
-              </div>
             </div>
-            <div className="border-r border-topbar-firstButton px-4 text-center iphonePortrait:border-none">
-              <span className="text-white text-sm flex iphonePortrait:flex-row iphonePortrait:space-x-1">
-                <p>{user.public_repos} </p>
-                <p> repos</p>
-              </span>
+            <div className="landscape:border-r landscape:border-topbar-firstButton px-2">
+              <p className="text-xs">{user.login}</p>
             </div>
-            <span className="text-white text-sm">
-              {user.followers} followers
-            </span>
+            <div className="landscape:border-r landscape:border-topbar-firstButton px-2">
+              <p className="text-xs">{user.public_repos} repos </p>
+            </div>
+            <div className="px-2">
+              <p className="text-xs">{user.following} following</p>
+            </div>
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -52,7 +49,7 @@ const GithubPage = ({ repos, user }) => {
                     {repo.topics.map((topic) => (
                       <span
                         key={topic}
-                        className="bg-topbar-firstButton text-xs font-semibold mr-2 px-1.5 py-1.5 rounded dark:bg-green-700 dark:text-green-200"
+                        className="bg-topbar-firstButton text-xs font-semibold mr-2 px-1.5 py-1.5 rounded dark:bg-green-700 dark:text-green-200 portrait:hidden"
                       >
                         {topic}
                       </span>
@@ -63,7 +60,7 @@ const GithubPage = ({ repos, user }) => {
             </div>
           ))}
         </div>
-        <div className="my-12 fixed bottom-0">
+        <div className="my-12 bottom-0 landscape:w-4/5">
           <GitHubCalendar
             username={process.env.NEXT_PUBLIC_GITHUB_USERNAME || ""}
             hideColorLegend

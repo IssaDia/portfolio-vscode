@@ -29,7 +29,7 @@ const EmailTemplate = () => {
     }
   };
   return (
-    <div className="m-8 p-6 bg-main-background rounded-lg shadow-md">
+    <div className="p-6 bg-main-background rounded-lg shadow-md">
       <h2 className="text-xl font-bold text-white mb-4">Contact Me</h2>
       <form onSubmit={submitForm} className="space-y-4 justify-center">
         <input
@@ -65,7 +65,7 @@ const EmailTemplate = () => {
         ></textarea>
         <button
           type="submit"
-          className="w-1/4 p-2 bg-topbar-firstButton text-white font-bold rounded hover:bg-topbar-thirdButton transition-colors"
+          className="w-1/4 p-2 bg-topbar-firstButton text-white font-bold rounded hover:bg-topbar-thirdButton transition-colors landscape:w-2/4 portrait:w-2/4"
         >
           Send Message
         </button>
