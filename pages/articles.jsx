@@ -1,7 +1,5 @@
 import Image from "next/image";
-import { useMediumArticles } from "../hooks/useMediumArticles";
 import Link from "next/link";
-import { Article } from "../lib/interfaces/Article";
 import Parser from "rss-parser";
 
 const ArticlesPage = ({ articles }) => {

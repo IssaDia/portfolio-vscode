@@ -11,7 +11,7 @@ const sendEmail = async (req: NextApiRequest, res: NextApiResponse) => {
   const resend = new Resend(process.env.NEXT_RESEND_API_KEY);
 
   try {
-    const { name, email, subject } = req.body;
+    const { name, subject } = req.body;
 
     const { data, error } = await resend.emails.send({
       from: "Acme <onboarding@resend.dev>",
