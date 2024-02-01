@@ -1,4 +1,3 @@
-import styles from "./Left.module.css";
 import SourceControlIcon from "../../icons/SourceControlIcon";
 import ErrorIcon from "../../icons/ErrorIcon";
 import WarningIcon from "../../icons/WarningIcon";

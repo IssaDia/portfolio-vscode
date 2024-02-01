@@ -9,7 +9,7 @@ const TopMenuItem = ({ image, name, path }: MenuItemI) => {
     <ActiveLink href={path} activeClassName="active">
       {(isActive: boolean) => (
         <div
-          className={`flex flex-row justify-around w-full p-2 cursor-pointer border-2 border-opacity-10 border-black  hover:bg-main-background ${
+          className={`flex flex-row justify-start w-full p-2 cursor-pointer border-2 border-opacity-10 border-black  hover:bg-main-background ${
             isActive
               ? "bg-black"
               : " bg-sidebar-background iphonePortrait:hidden"
@@ -17,7 +17,7 @@ const TopMenuItem = ({ image, name, path }: MenuItemI) => {
         >
           <Link href={path} legacyBehavior passHref>
             <a className="block  w-full h-full ">
-              <div className="flex flex-row justify-center">
+              <div className="flex flex-row iphonePortrait:justify-start">
                 <Image
                   src={`/images/${image}.svg`}
                   alt="nav-items-logo"

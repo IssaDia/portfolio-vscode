@@ -1,4 +1,4 @@
 export default interface sidebarItemsI {
-  Icon: (props: any) => JSX.Element
-  path: string
+  Icon: (props: string) => JSX.Element;
+  path: string;
 }

@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./Button.module.css";
 import Link from "next/link";
 
 type ButtonProps = {
@@ -9,8 +8,8 @@ type ButtonProps = {
 };
 const Button = ({ label, type, path }: ButtonProps) => {
   return (
-    <div className={styles.container}>
-      <Link href={path} className={styles[type]}>
+    <div className="">
+      <Link href={path} className="">
         {label}
       </Link>
     </div>

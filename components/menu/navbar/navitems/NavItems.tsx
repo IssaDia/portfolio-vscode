@@ -1,11 +1,19 @@
+import { useRouter } from "next/router";
 import MenuItemsData from "../../../../lib/data/menuItems";
 import SideBarMenuItem from "../../../../widget/SideBarMenuItem";
-import MenuItem from "../../../../widget/SideBarMenuItem";
 
 const NavItems = () => {
+  const router = useRouter();
   const navItemsElm = MenuItemsData.map((item, i) => {
+    const isActive = router.pathname === item.path;
+
     return (
-      <div className="iphonePortrait:ml-7 iphonePortrait:mb-1">
+      <div
+        key={i}
+        className={`flex justify-center items-center iphonePortrait:pb-1 hover:bg-topbar-background hover:bg-opacity-40 ${
+          isActive ? "bg-topbar-background" : ""
+        }`}
+      >
         <SideBarMenuItem
           key={i}
           name={item.name}
