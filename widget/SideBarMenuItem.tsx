@@ -7,7 +7,7 @@ import MenuItemI from "../lib/interfaces/MenuItemI";
 
 export const MenuItem = ({ image, name, path }: MenuItemI) => {
   return (
-    <div className=" hover:bg-topbar-background">
+    <div className=" hover:bg-topbar-background ip">
       <ActiveLink href={path} activeClassName="active">
         {(isActive: boolean) => (
           <Link href={path} legacyBehavior passHref>
@@ -24,7 +24,7 @@ export const MenuItem = ({ image, name, path }: MenuItemI) => {
                   height={18}
                   className="mr-2"
                 />
-                <p className="text-sm brightness-150 text-menu-firstVariant iphonePortrait:text-xs">
+                <p className="text-sm brightness-150 text-menu-firstVariant phone:text-xs ipadLandscape:text-sm">
                   {name}
                 </p>
               </div>

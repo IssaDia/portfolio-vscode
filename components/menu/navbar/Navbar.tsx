@@ -17,7 +17,7 @@ const Portfolio = () => {
               toggle ? "rotate-90" : ""
             }`}
           />
-          <p className="uppercase text-sm brightness-150 iphonePortrait:text-xs">
+          <p className="uppercase text-sm brightness-150 phone:text-xs ipadLandscape:text-sm">
             portfolio
           </p>
         </div>

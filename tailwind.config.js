@@ -41,14 +41,9 @@ module.exports = {
         },
       },
       screens: {
-        iphonePortrait: "375px",
-        androidPortrait: "412px",
-        iphone6Portrait: "414px",
-        androidLandscape: "684px",
-        iphoneLandscape: "734px",
-        iphone6Landscape: "667px",
-        iphone6PlusLandscape: "736px",
-        ipadPortrait: "768px",
+        phone: "375px",
+        landscape: "667px",
+        ipadPortrait: { raw: "(min-width: 768px)" },
         ipadLandscape: "1024px",
 
         // tablet: "640px",
