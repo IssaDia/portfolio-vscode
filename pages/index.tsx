@@ -43,7 +43,7 @@ export default Profile ;`;
 
 export default function Home() {
   return (
-    <div className="cursor-pointer">
+    <div className="cursor-pointer overflow-y-auto overflow-x-auto">
       <CodeBlock
         numberOfLines={codeSnippet.split("\n").length}
         codeSnippet={codeSnippet}

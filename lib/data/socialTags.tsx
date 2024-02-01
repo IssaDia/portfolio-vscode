@@ -5,4 +5,5 @@ export const socialTags: string[] = [
   "website",
   "email",
   "medium",
+  "notion",
 ];

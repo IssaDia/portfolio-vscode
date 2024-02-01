@@ -41,8 +41,6 @@ export const highlightParenthesisWords = (word: string) => {
 };
 
 export const highlightCSSComment = (line: string): string => {
-  console.log(line);
-
   return line.replace(
     /\*[\s\S]*?\*\/$/g,
     `<span style="color: #6a9955;">${line}</span>`

@@ -4,7 +4,7 @@ import Parser from "rss-parser";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const parser = new Parser();
-  const feedUrl = `https://medium.com/feed/@votreNomDUtilisateur`;
+  const feedUrl = `https://medium.com/feed/@issadia`;
 
   try {
     const feed = await parser.parseURL(feedUrl);

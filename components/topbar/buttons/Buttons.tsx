@@ -4,17 +4,17 @@ const Buttons = () => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div
-      className={`flex justify-evenly items-center w-16 cursor-pointer h-full ${
+      className={`flex justify-evenly items-center cursor-pointer h-full w-full ${
         isHovered ? "hover" : ""
       }`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <span className="relative inline-block bg-topbar-firstButton  rounded-full p-1.5">
+      <span className="relative inline-block bg-topbar-firstButton rounded-full p-1.5 iphonePortrait:text-sm">
         <span
           className={` text-black ${
             isHovered ? "opacity-100" : "opacity-0"
-          } hover:opacity-100 transition-opacity absolute  transform -translate-x-1/2 -translate-y-1/2`}
+          } hover:opacity-100 hover:font-bold transition-opacity absolute  transform -translate-x-1/2 -translate-y-1/2`}
         >
           <svg
             height="4px"
@@ -39,7 +39,6 @@ const Buttons = () => {
             width="4px"
             xmlns="http://www.w3.org/2000/svg"
           >
-            {/* Straight horizontal line */}
             <line
               x1="0"
               y1="6"

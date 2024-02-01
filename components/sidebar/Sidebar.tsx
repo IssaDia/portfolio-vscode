@@ -27,7 +27,7 @@ const Sidebar = () => {
           className={`w-1 h-16 ${lineColor} absolute brightness-200 right-11`}
         ></div>
 
-        <div className="brightness-110">
+        <div className="brightness-110 sm:w-15 sm:h-15">
           <Icon
             width="30"
             height="30"
@@ -56,11 +56,7 @@ const Sidebar = () => {
     ({ Icon, path }, index) => {
       return (
         <Link key={index} href={path}>
-          <div
-          // className={`${styles.item__container} ${
-          //   router.pathname === path && styles.active
-          // }  `}
-          >
+          <div>
             <Icon
               width="30"
               height="30"

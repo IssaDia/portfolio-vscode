@@ -17,7 +17,9 @@ const Portfolio = () => {
               toggle ? "rotate-90" : ""
             }`}
           />
-          <p className="uppercase text-sm brightness-150">portfolio</p>
+          <p className="uppercase text-sm brightness-150 iphonePortrait:text-xs">
+            portfolio
+          </p>
         </div>
 
         {/* NavItems toggled */}

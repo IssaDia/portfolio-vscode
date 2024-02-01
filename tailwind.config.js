@@ -31,6 +31,7 @@ module.exports = {
         main: {
           background: "#1e1e1e",
           firstVariant: "#a4a4a4",
+          secondVariant: "#2d2d2d",
         },
         codeBlock: {
           firstVariant: "#b37aae",
@@ -38,6 +39,26 @@ module.exports = {
         bottombar: {
           background: "#007acc",
         },
+      },
+      screens: {
+        iphonePortrait: "375px",
+        androidPortrait: "412px",
+        iphone6Portrait: "414px",
+        androidLandscape: "684px",
+        iphoneLandscape: "734px",
+        iphone6Landscape: "667px",
+        iphone6PlusLandscape: "736px",
+        ipadPortrait: "768px",
+        ipadLandscape: "1024px",
+
+        // tablet: "640px",
+        // // => @media (min-width: 640px) { ... }
+
+        // laptop: "1024px",
+        // // => @media (min-width: 1024px) { ... }
+
+        // desktop: "1280px",
+        // // => @media (min-width: 1280px) { ... }
       },
     },
   },

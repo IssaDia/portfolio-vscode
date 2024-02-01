@@ -49,20 +49,12 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
 
   return (
     <>
-      <div style={{ fontFamily: "monospace", whiteSpace: "pre" }}>
+      <div className="font-mono overflow-x-auto overflow-y-auto">
         {codeSnippetLines.slice(0, numberOfLines).map((line, index) => (
-          <div key={index} style={{ display: "flex" }}>
+          <div key={index} className="flex text-xs whitespace-nowrap">
+            <span className=" text-gray-400">{index + 1}</span>
             <span
-              style={{
-                width: "50px",
-                textAlign: "right",
-                color: "#a4a4a4",
-              }}
-            >
-              {index + 1}
-            </span>
-            <span
-              style={{ paddingLeft: "10px" }}
+              className="ml-4"
               dangerouslySetInnerHTML={{ __html: renderColoredText(line) }}
             />
           </div>
