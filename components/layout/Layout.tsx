@@ -17,7 +17,7 @@ const Layout = ({ children }: Props) => {
         <div className="flex-none w-16 phone:hidden landscape:block">
           <Sidebar />
         </div>
-        <div className="flex-none w-2/12 phone:w-4/12 ipadLandscape:w-2/12">
+        <div className="flex-none w-2/12 phone:w-4/12 landscape:w-3/12 ipadLandscape:w-2/12">
           <Menu />
         </div>
         <div className="grow">

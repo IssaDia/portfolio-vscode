@@ -1,7 +1,7 @@
 import React from "react";
 import CodeBlock from "../components/codeBlock/CodeBlock";
 
-const codeSnippet = `<!DOCTYPE html >
+const codeSnippet = `<!DOCTYPE html>
 <html lang = "en" >
   <head>
     <meta charset = "UTF-8" />
@@ -9,9 +9,10 @@ const codeSnippet = `<!DOCTYPE html >
     <title> About Me </title>
   </head>
   <body>
-    <p>Issa's a Frontend Developer with two years of experience who wants to participate in ambitious projects 
-    related to his skills. </p>
-    <p> He likes to find the right tool to resolve a problem. On his spare time he continues to learn about a lot of subjects.</p>
+    <p>Issa's a Frontend Developer with two years of experience</p> 
+    <p> He is passionate about coding and wants to participate in ambitious projects related to his skills.</p>
+    <p> He likes to find the right tool to resolve a problem.</p>
+    <p>On his spare time he continues to learn about a lot of subjects.</p>
   </body>
 </html>`;
 
