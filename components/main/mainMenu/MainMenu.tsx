@@ -1,5 +1,4 @@
 import menuItemsData from "../../../lib/data/menuItems";
-import MenuItem from "../../../widget/SideBarMenuItem";
 import { capitalizeFirstLetter } from "../../../utils/helpers/helpers";
 import TopMenuItem from "../../../widget/TopMenuItem";
 
@@ -14,7 +13,7 @@ const MainMenu = () => {
       />
     );
   });
-  return <div className="flex flex-row">{menuItems}</div>;
+  return <div className="flex flex-row justify-start">{menuItems}</div>;
 };
 
 export default MainMenu;

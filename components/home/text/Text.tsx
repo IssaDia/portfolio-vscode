@@ -1,13 +1,12 @@
 import React from "react";
-import styles from "./Text.module.css";
 
 type TextProps = {
-  text: String;
+  text: string;
 };
 
 const Text = ({ text }: TextProps) => {
   return (
-    <div className={styles.container}>
+    <div className="">
       <h1>{text}</h1>
     </div>
   );

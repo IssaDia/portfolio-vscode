@@ -1,6 +1,4 @@
 import React, { ReactNode } from "react";
-
-import styles from "./Main.module.css";
 import MainMenu from "./mainMenu/MainMenu";
 
 interface Props {
@@ -8,7 +6,7 @@ interface Props {
 }
 const Main = ({ children }: Props) => {
   return (
-    <div className="bg-main-background h-full text-white">
+    <div className="bg-main-background h-full text-white overflow-x-auto">
       <MainMenu />
       {children}
     </div>

@@ -1,13 +1,12 @@
 import React from "react";
-import styles from "./BackgroundText.module.css";
 
 type BackgroundTextProps = {
-  text: String;
+  text: string;
 };
 const BackgroundText = ({ text }: BackgroundTextProps) => {
   return (
     <div>
-      <p className={styles.textContainer}>{text}</p>
+      <p className="">{text}</p>
     </div>
   );
 };

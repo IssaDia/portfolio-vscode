@@ -1,13 +1,12 @@
-import NextjsIcon from '../../icons/NextjsIcon'
-import styles from './NextItem.module.css'
+import NextjsIcon from "../../icons/NextjsIcon";
 
 const NextItem = () => {
   return (
-    <div className={styles.container}>
+    <div className="">
       <NextjsIcon />
       <p>Powered by Next.js</p>
     </div>
-  )
-}
+  );
+};
 
-export default NextItem
+export default NextItem;

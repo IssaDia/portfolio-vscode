@@ -9,22 +9,23 @@ const GithubPage = ({ repos, user }: any) => {
     <>
       <div className="m-8 overflow-collapse">
         <div className="flex flex-col items-center justify-center mb-6 bg-sidebar-background h-32 rounded-sm w-full">
-          <div className="flex items-center justify-center space-x-4">
-            <div className="flex items-center space-x-4">
+          <div className="flex items-center justify-center space-x-4 iphonePortrait:flex-col iphonePortrait:space-x-0 iphonePortrait:space-y-2">
+            <div className="flex items-center space-x-4 ">
               <Image
                 src="/images/issa-profile-pic.JPEG"
                 alt="avatar"
                 width={80}
                 height={80}
-                className="rounded-sm"
+                className="rounded-sm iphonePortrait:hidden"
               />
-              <div className="border-r border-topbar-firstButton pr-4">
+              <div className="border-r border-topbar-firstButton pr-4 iphonePortrait:border-none">
                 <div className="text-sm">{user.login}</div>
               </div>
             </div>
-            <div className="border-r border-topbar-firstButton px-4 text-center">
-              <span className="text-white text-sm">
-                {user.public_repos} repos
+            <div className="border-r border-topbar-firstButton px-4 text-center iphonePortrait:border-none">
+              <span className="text-white text-sm flex iphonePortrait:flex-row iphonePortrait:space-x-1">
+                <p>{user.public_repos} </p>
+                <p> repos</p>
               </span>
             </div>
             <span className="text-white text-sm">

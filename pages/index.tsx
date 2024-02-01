@@ -33,9 +33,9 @@ const Profile = ( {
       <h1>Issa Dia</h1>
       <h2>Frontend Developer</h2>
       <h3>Technical Skills</h3>
-      <SkillList skills = { techSkills } />
+      <SkillList skills = {techSkills} />
       <h3>Soft Skills</h3>
-      <SkillList skills = { softSkills } />
+      <SkillList skills = {softSkills} />
     </div>
   ) ;
 } ;

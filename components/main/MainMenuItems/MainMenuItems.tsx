@@ -1,5 +1,4 @@
-import sidebarNavItems from '../../../lib/data/menuItems'
-import styles from './MainMenuItems.module.css'
+import sidebarNavItems from "../../../lib/data/menuItems";
 
 const MainMenuItems = () => {
   const mainMenuItems = sidebarNavItems.map((item, i) => {
@@ -7,9 +6,9 @@ const MainMenuItems = () => {
       <>
         <div>{item}</div>
       </>
-    )
-  })
-  return <div className={styles.container}>{mainMenuItems}</div>
-}
+    );
+  });
+  return <div className="">{mainMenuItems}</div>;
+};
 
-export default MainMenuItems
+export default MainMenuItems;

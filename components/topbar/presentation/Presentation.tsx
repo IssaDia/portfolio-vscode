@@ -1,11 +1,9 @@
-import styles from './Presentation.module.css'
-
 const Presentation = () => {
   return (
-    <div className={styles.container}>
+    <div className="">
       <p>Issa Dia - Visual Studio Code</p>
     </div>
-  )
-}
+  );
+};
 
-export default Presentation
+export default Presentation;

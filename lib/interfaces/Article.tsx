@@ -1,4 +1,4 @@
-interface Article {
+export interface Article {
   categories: string[];
   contentEncoded: string;
   contentEncodedSnippet: string;
