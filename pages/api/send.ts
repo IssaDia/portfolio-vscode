@@ -3,18 +3,19 @@ import { EmailTemplate } from "../../components/contact/EmailTemplate";
 import { Resend } from "resend";
 
 const sendEmail = async (req: NextApiRequest, res: NextApiResponse) => {
-  if (!process.env.RESEND_API_KEY) {
+  if (!process.env.NEXT_RESEND_API_KEY) {
     console.error("RESEND_API_KEY is not defined.");
     return res.status(500).json({ message: "Server configuration error." });
   }
 
-  const resend = new Resend(process.env.RESEND_API_KEY);
+  const resend = new Resend(process.env.NEXT_RESEND_API_KEY);
 
   try {
     const { name, email, subject } = req.body;
+
     const { data, error } = await resend.emails.send({
       from: "Acme <onboarding@resend.dev>",
-      to: [email],
+      to: ["issadiapro@gmail.com"],
       subject: subject,
       react: EmailTemplate({ firstName: name }),
     });

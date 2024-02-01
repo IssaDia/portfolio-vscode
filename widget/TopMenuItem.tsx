@@ -12,7 +12,7 @@ const TopMenuItem = ({ image, name, path }: MenuItemI) => {
           className={`flex flex-row justify-start w-full p-2 cursor-pointer border-2 border-opacity-10 border-black  hover:bg-main-background ${
             isActive
               ? "bg-black"
-              : "bg-sidebar-background phone:hidden landscape:hidden"
+              : "bg-sidebar-background phone:hidden  ipadLandscape:block"
           } `}
         >
           <Link href={path} legacyBehavior passHref>

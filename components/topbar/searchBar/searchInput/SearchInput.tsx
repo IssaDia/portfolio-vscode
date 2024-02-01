@@ -4,12 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const SearchInput = () => {
   return (
-    <div className="flex justify-center items-center  phone:w-full phone:mx-6 landscape:mx-6 phone:my-2 landscape:my-2 phone:text-center">
+    <div className="flex  ipadLandscape:w-2/4 justify-center items-center  phone:w-full phone:mx-6 landscape:mx-6 phone:my-2 landscape:my-2 phone:text-center">
       <FontAwesomeIcon
         icon={faSearch}
         className="absolute text-topbar-firstVariant rotate-90 brightness-110 px-32 phone:hidden landscape:block ipadPortrait:mr-48 landscape:mr-52 ipadPortrait:block"
       />
-      <style></style>
+
       <input
         type="text"
         placeholder="Issa Dia (Frontend Developer)"

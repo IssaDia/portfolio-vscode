@@ -3,22 +3,18 @@ import GitHubCalendar from "react-github-calendar";
 import Image from "next/image";
 
 const GithubPage = ({ repos, user }) => {
-  console.log(user, repos);
-
   return (
     <>
-      <div className="m-8 overflow-scroll phone:w-1/5 ipadLandscape:w-4/5">
+      <div className="p-8 overflow-scroll ipadLandscape:w-full">
         <div className="flex flex-col items-center justify-center mb-6 bg-sidebar-background h-32 rounded-sm w-full cursor-pointer">
           <div className="flex items-center space-x-4 phone:flex-col phone:space-x-0 phone:space-y-2 landscape:flex-row landscape:justify-between">
-            <div className="">
-              <Image
-                src="/images/issa-profile-pic.JPEG"
-                alt="avatar"
-                width={80}
-                height={80}
-                className="rounded-sm phone:hidden landscape:block"
-              />
-            </div>
+            <Image
+              src="/images/issa-profile-pic.JPEG"
+              alt="avatar"
+              width={80}
+              height={80}
+              className="rounded-sm phone:hidden landscape:block"
+            />{" "}
             <div className="landscape:border-r landscape:border-topbar-firstButton px-2">
               <p className="text-xs">{user.login}</p>
             </div>
@@ -30,7 +26,8 @@ const GithubPage = ({ repos, user }) => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-hidden">
           {repos.map((repo) => (
             <div key={repo.id} className="bg-sidebar-background p-4">
               <Link
@@ -60,7 +57,7 @@ const GithubPage = ({ repos, user }) => {
             </div>
           ))}
         </div>
-        <div className="my-12 bottom-0 landscape:w-4/5 ipadLandscape:fixed">
+        <div className="my-4 bg-sidebar-background p-4 rounded-sm w-full cursor-pointer landscape:w-full phone:hidden ipadLandscape:block">
           <GitHubCalendar
             username={process.env.NEXT_PUBLIC_GITHUB_USERNAME || ""}
             hideColorLegend

@@ -2,27 +2,21 @@ import Image from "next/image";
 import { useMediumArticles } from "../hooks/useMediumArticles";
 import Link from "next/link";
 import { Article } from "../lib/interfaces/Article";
+import Parser from "rss-parser";
 
-const ArticlesPage = () => {
-  const { articles, isLoading, error } = useMediumArticles();
-
-  console.log(articles);
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
-
+const ArticlesPage = ({ articles }) => {
   return (
     <>
-      <div>
+      <div className="p-4">
         <h1 className="uppercase text-sm brightness-150 my-4 text-center cursor-pointer">
           Recent Posts from Medium
         </h1>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-        {articles.map((article: Article, index) => (
+        {articles.map((article, index) => (
           <div
             key={index}
-            className="bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg"
+            className="bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg border-none"
           >
             <Image
               src="/images/medium.jpeg"
@@ -31,7 +25,7 @@ const ArticlesPage = () => {
               height={300}
               className="w-full"
             />
-            <div className="p-4 bg-sidebar-background h-24 mb-1 border-none">
+            <div className="p-4  h-24 mb-1">
               <Link href={article.link}>
                 <h2 className="brightness-150 font-bold text-l mb-2 h-12 phone:text-xs landscape:text-sm">
                   {article.title}
@@ -47,9 +41,29 @@ const ArticlesPage = () => {
 };
 
 export async function getStaticProps() {
-  return {
-    props: { title: "Articles" },
-  };
+  const parser = new Parser();
+  const feedUrl = `https://medium.com/feed/@issadia`;
+
+  try {
+    const feed = await parser.parseURL(feedUrl);
+    const articles = feed.items.slice(0, 6);
+    return {
+      props: {
+        articles: articles,
+        title: "Articles",
+      },
+      revalidate: 3600,
+    };
+  } catch (error) {
+    console.error(error);
+    return {
+      props: {
+        articles: [],
+        error: "Failed to fetch articles.",
+        title: "Articles",
+      },
+    };
+  }
 }
 
 export default ArticlesPage;

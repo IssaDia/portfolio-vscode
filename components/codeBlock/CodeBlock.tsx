@@ -49,12 +49,9 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
 
   return (
     <>
-      <div className="font-mono overflow-x-auto overflow-y-auto">
+      <div className="font-mono overflow-x-auto overflow-y-auto whitespace-pre">
         {codeSnippetLines.slice(0, numberOfLines).map((line, index) => (
-          <div
-            key={index}
-            className="flex text-xs ipadLandscape:text-sm whitespace-nowrap"
-          >
+          <div key={index} className="text-xs ipadLandscape:text-sm">
             <span className="text-gray-400">{index + 1}</span>
             <span
               className="ml-4"
