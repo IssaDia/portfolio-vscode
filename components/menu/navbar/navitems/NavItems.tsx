@@ -10,7 +10,7 @@ const NavItems = () => {
     return (
       <div
         key={i}
-        className={`flex portrait:justify-center  landscape:justify-start landscape:pl-8 landscape:justify-start landscape:pl-8 items-center portrait:pb-1 hover:bg-topbar-background hover:bg-opacity-40 ${
+        className={`flex phone:justify-center   landscape:justify-start landscape:pl-8 items-center phone:pb-1 hover:bg-topbar-background hover:bg-opacity-40 ${
           isActive ? "bg-topbar-background" : ""
         }`}
       >

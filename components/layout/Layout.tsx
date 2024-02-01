@@ -14,10 +14,10 @@ const Layout = ({ children }: Props) => {
     <div className="flex flex-col h-screen w-full">
       <Topbar />
       <div className="flex flex-row h-screen w-full overflow-x-auto">
-        <div className="flex-none w-16 portrait:hidden landscape:block">
+        <div className="flex-none w-16 phone:hidden landscape:block">
           <Sidebar />
         </div>
-        <div className="flex-none w-2/12 portrait:w-4/12 landscape:w-4/12">
+        <div className="flex-none w-2/12 phone:w-4/12 ipadLandscape:w-2/12">
           <Menu />
         </div>
         <div className="grow">

@@ -4,7 +4,7 @@ import Contact from "../components/contact/Contact";
 const codeSnippet = `/* join me on my journey */
 
 .socials {
-  website : https://issaa.dev
+  website : https://issadia.io
   email : issadiapro@gmail.com
   github : https://github.com/IssaDia
   linkedin : https://www.linkedin.com/in/issa-dia-dev/

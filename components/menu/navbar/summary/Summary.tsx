@@ -13,7 +13,7 @@ const Summary = () => {
     <>
       <div
         onClick={setToggle}
-        className="flex flex-row items-center text-menu-firstVariant cursor-pointer pl-2 portrait:pl-1 landscape:pl-2"
+        className="flex flex-row items-center text-menu-firstVariant cursor-pointer pl-2 phone:pl-1 landscape:pl-2"
       >
         <ChevronRight
           className={`transition-transform duration-200 cursor-pointer mr-2 ${
@@ -27,7 +27,9 @@ const Summary = () => {
           <FontAwesomeIcon icon={faFolder} className="mr-2" />
         )}
 
-        <p className="text-sm brightness-150 py-1  portrait:text-xs">summary</p>
+        <p className="text-sm brightness-150 py-1 phone:text-xs ipadLandscape:text-sm">
+          summary
+        </p>
       </div>
 
       {toggle && <NavItems />}

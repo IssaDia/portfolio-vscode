@@ -51,8 +51,11 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
     <>
       <div className="font-mono overflow-x-auto overflow-y-auto">
         {codeSnippetLines.slice(0, numberOfLines).map((line, index) => (
-          <div key={index} className="flex text-xs whitespace-nowrap">
-            <span className=" text-gray-400">{index + 1}</span>
+          <div
+            key={index}
+            className="flex text-xs ipadLandscape:text-sm whitespace-nowrap"
+          >
+            <span className="text-gray-400">{index + 1}</span>
             <span
               className="ml-4"
               dangerouslySetInnerHTML={{ __html: renderColoredText(line) }}

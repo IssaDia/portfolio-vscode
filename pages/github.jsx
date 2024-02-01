@@ -7,16 +7,16 @@ const GithubPage = ({ repos, user }) => {
 
   return (
     <>
-      <div className="m-8 overflow-scroll portrait:w-1/5 landscape:w-2/5">
-        <div className="flex flex-col items-center justify-center mb-6 bg-sidebar-background h-32 rounded-sm w-full">
-          <div className="flex items-center space-x-4 portrait:flex-col portrait:space-x-0 portrait:space-y-2 landscape:flex-row landscape:justify-between landscape:flex">
+      <div className="m-8 overflow-scroll phone:w-1/5 ipadLandscape:w-4/5">
+        <div className="flex flex-col items-center justify-center mb-6 bg-sidebar-background h-32 rounded-sm w-full cursor-pointer">
+          <div className="flex items-center space-x-4 phone:flex-col phone:space-x-0 phone:space-y-2 landscape:flex-row landscape:justify-between">
             <div className="">
               <Image
                 src="/images/issa-profile-pic.JPEG"
                 alt="avatar"
                 width={80}
                 height={80}
-                className="rounded-sm portrait:hidden landscape:block"
+                className="rounded-sm phone:hidden landscape:block"
               />
             </div>
             <div className="landscape:border-r landscape:border-topbar-firstButton px-2">
@@ -49,7 +49,7 @@ const GithubPage = ({ repos, user }) => {
                     {repo.topics.map((topic) => (
                       <span
                         key={topic}
-                        className="bg-topbar-firstButton text-xs font-semibold mr-2 px-1.5 py-1.5 rounded dark:bg-green-700 dark:text-green-200 portrait:hidden"
+                        className="bg-topbar-firstButton text-xs font-semibold mr-2 px-1.5 py-1.5 rounded dark:bg-green-700 dark:text-green-200 phone:hidden"
                       >
                         {topic}
                       </span>
@@ -60,7 +60,7 @@ const GithubPage = ({ repos, user }) => {
             </div>
           ))}
         </div>
-        <div className="my-12 bottom-0 landscape:w-4/5">
+        <div className="my-12 bottom-0 landscape:w-4/5 ipadLandscape:fixed">
           <GitHubCalendar
             username={process.env.NEXT_PUBLIC_GITHUB_USERNAME || ""}
             hideColorLegend

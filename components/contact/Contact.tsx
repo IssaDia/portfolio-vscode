@@ -65,7 +65,7 @@ const EmailTemplate = () => {
         ></textarea>
         <button
           type="submit"
-          className="w-1/4 p-2 bg-topbar-firstButton text-white font-bold rounded hover:bg-topbar-thirdButton transition-colors landscape:w-2/4 portrait:w-2/4"
+          className="w-1/4 p-2 bg-topbar-firstButton text-white font-bold rounded hover:bg-topbar-thirdButton transition-colors landscape:w-2/4 phone:w-2/4"
         >
           Send Message
         </button>

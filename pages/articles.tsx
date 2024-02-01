@@ -33,7 +33,7 @@ const ArticlesPage = () => {
             />
             <div className="p-4 bg-sidebar-background h-24 mb-1 border-none">
               <Link href={article.link}>
-                <h2 className="brightness-150 font-bold text-l mb-2 h-12 portrait:text-xs landscape:text-sm">
+                <h2 className="brightness-150 font-bold text-l mb-2 h-12 phone:text-xs landscape:text-sm">
                   {article.title}
                 </h2>
                 <p className="brightness-150 text-sm h4">{article.creator}</p>
