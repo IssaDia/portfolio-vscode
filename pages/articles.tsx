@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useMediumArticles } from "../hooks/useMediumArticles";
 import Link from "next/link";
+import { Article } from "../lib/interfaces/Article";
 
 const ArticlesPage = () => {
   const { articles, isLoading, error } = useMediumArticles();
