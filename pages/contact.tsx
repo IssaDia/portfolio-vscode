@@ -1,5 +1,4 @@
 import CodeBlock from "../components/codeBlock/CodeBlock";
-import Contact from "../components/contact/Contact";
 
 const codeSnippet = `/* join me on my journey */
 
