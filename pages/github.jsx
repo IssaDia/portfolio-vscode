@@ -30,6 +30,12 @@ const GithubPage = ({ repos, user, error }) => {
           </div>
         </div>
 
+        <div className="p-4">
+          <h1 className="uppercase text-sm brightness-150 my-4 text-center cursor-pointer">
+            Featured Github Projects
+          </h1>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-hidden">
           {repos.map((repo) => (
             <div key={repo.id} className="bg-sidebar-background p-4">
