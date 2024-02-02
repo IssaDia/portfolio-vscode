@@ -23,11 +23,6 @@ const Layout = ({ children }: Props) => {
       setTerminalHeight(Math.max(newHeight, 30));
     };
 
-    const handleResizeEnd = () => {
-      window.removeEventListener("mousemove", doResize);
-      window.removeEventListener("mouseup", handleResizeEnd);
-    };
-
     const stopResize = () => {
       window.removeEventListener("mousemove", doResize);
       window.removeEventListener("mouseup", stopResize);
