@@ -15,9 +15,9 @@ const TopMenuItem = ({ image, name, path }: MenuItemI) => {
         <div
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className={`flex flex-row justify-between w-full p-2 cursor-pointer  hover:bg-main-background  ${
+          className={`flex flex-row justify-between w-full p-2 cursor-pointer border-r-0.5 border-opacity-80 border-main-background hover:bg-main-background  ${
             isActive
-              ? "bg-black"
+              ? "bg-main-background"
               : "bg-sidebar-background phone:hidden ipadLandscape:block"
           } `}
         >

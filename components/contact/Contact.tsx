@@ -30,7 +30,13 @@ const EmailTemplate = () => {
   };
   return (
     <div className="p-6 bg-main-background rounded-lg shadow-md">
-      <h2 className="text-xl font-bold text-white mb-4">Contact Me</h2>
+      <div className="flex flex-row items-center text-menu-firstVariant mb-4 space-x-2">
+        <h2 className="text-xs uppercase font-bold text-menu-firstVariant">
+          Slide up to contact me
+        </h2>
+
+        <span className="text-xl"> 🤷🏽‍♂️</span>
+      </div>
       <form onSubmit={submitForm} className="space-y-4 justify-center">
         <input
           className="w-full p-2 rounded bg-sidebar-background text-white placeholder-gray-300"
