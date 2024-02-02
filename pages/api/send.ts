@@ -11,13 +11,13 @@ const sendEmail = async (req: NextApiRequest, res: NextApiResponse) => {
   const resend = new Resend(process.env.NEXT_RESEND_API_KEY);
 
   try {
-    const { name, subject } = req.body;
+    const { name, subject, message } = req.body;
 
     const { data, error } = await resend.emails.send({
       from: "Acme <onboarding@resend.dev>",
       to: ["issadiapro@gmail.com"],
       subject: subject,
-      react: EmailTemplate({ firstName: name }),
+      react: EmailTemplate({ firstName: name, message }),
     });
 
     if (error) {

@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  important: true,
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -57,6 +58,9 @@ module.exports = {
       },
       borderWidth: {
         0.5: "0.5px",
+      },
+      fontSize: {
+        xxs: "0.5rem",
       },
     },
   },

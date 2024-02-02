@@ -2,9 +2,9 @@ import SourceControlIcon from "../../icons/SourceControlIcon";
 import ErrorIcon from "../../icons/ErrorIcon";
 import WarningIcon from "../../icons/WarningIcon";
 
-const Left = () => {
+const BottomLeft = () => {
   return (
-    <div className="flex flex-row h-full w-1/2 text-white opacity-90">
+    <div className="flex flex-row h-full w-1/3 text-white opacity-90">
       <div className="flex flex-row mr-4 cursor-pointer bg-bottombar-background hover:bg-opacity-90 over z-40">
         <SourceControlIcon />
         <p>main</p>
@@ -23,4 +23,4 @@ const Left = () => {
   );
 };
 
-export default Left;
+export default BottomLeft;

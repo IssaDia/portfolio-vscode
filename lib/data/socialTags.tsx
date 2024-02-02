@@ -1,5 +1,5 @@
 export const socialTags: string[] = [
-  "x",
+  "twitter/x",
   "github",
   "linkedin",
   "website",
