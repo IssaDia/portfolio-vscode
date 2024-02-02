@@ -41,7 +41,7 @@ const Profile = ( {
 } ;
 export default Profile ;`;
 
-export default function Home() {
+export default function Profile() {
   return (
     <div className="cursor-pointer overflow-y-auto overflow-x-auto">
       <CodeBlock
@@ -55,6 +55,6 @@ export default function Home() {
 
 export async function getStaticProps() {
   return {
-    props: { title: "Home" },
+    props: { title: "Profile" },
   };
 }

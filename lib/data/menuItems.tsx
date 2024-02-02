@@ -3,7 +3,7 @@ import MenuItemI from "../interfaces/MenuItemI";
 const MenuItemsData: MenuItemI[] = [
   {
     image: "react_icon",
-    name: "home.tsx",
+    name: "profile.tsx",
     path: "/",
   },
   {
@@ -22,14 +22,14 @@ const MenuItemsData: MenuItemI[] = [
   //   path: "/projects",
   // },
   {
+    image: "vue_icon",
+    name: "github.vue",
+    path: "/github",
+  },
+  {
     image: "json_icon",
     name: "articles.json",
     path: "/articles",
-  },
-  {
-    image: "markdown_icon",
-    name: "github.md",
-    path: "/github",
   },
 ];
 
