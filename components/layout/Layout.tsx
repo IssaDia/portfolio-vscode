@@ -44,14 +44,14 @@ const Layout = ({ children }: Props) => {
         <div className="grow flex flex-col">
           <Main>{children}</Main>
           <div
-            className="w-full cursor-ns-resize bg-topbar-secondVariant"
+            className="w-full cursor-ns-resize bg-topbar-secondVariant hidden ipadLandscape:block"
             onMouseDown={handleResizeStart} // Set the mousedown event handler
             style={{ height: "2px" }} // The height of the draggable area
           />
           {/* Terminal area */}
 
           <div
-            className="terminal bg-main-background text-white"
+            className="terminal bg-main-background text-white hidden ipadLandscape:block"
             style={{ height: `${terminalHeight}px` }}
           >
             <div className="z-10">
