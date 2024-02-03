@@ -55,6 +55,12 @@ export async function getStaticProps() {
     const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME;
     const token = process.env.NEXT_PUBLIC_GITHUB_API_KEY;
 
+    if (!token) {
+      throw new Error(
+        "GitHub API key is not defined in the environment variables."
+      );
+    }
+
     const headers = {
       Authorization: `token ${token}`,
     };
@@ -62,14 +68,20 @@ export async function getStaticProps() {
     const userRes = await fetch(`https://api.github.com/users/${username}`, {
       headers,
     });
-    if (!userRes.ok) throw new Error("Failed to fetch user.");
+    if (!userRes.ok) {
+      throw new Error(`Failed to fetch user. Status: ${userRes.status}`);
+    }
     const user = await userRes.json();
 
     const repoRes = await fetch(
       `https://api.github.com/users/${username}/repos?per_page=30`,
       { headers }
     );
-    if (!repoRes.ok) throw new Error("Failed to fetch repositories.");
+    if (!repoRes.ok) {
+      throw new Error(
+        `Failed to fetch repositories. Status: ${repoRes.status}`
+      );
+    }
     let repos = await repoRes.json();
 
     const allowedTopics = ["javascript"];
@@ -79,25 +91,18 @@ export async function getStaticProps() {
         repo.topics.some((topic) => allowedTopics.includes(topic))
     );
 
-    console.log(user);
-
     return {
-      props: {
-        user,
-        repos,
-        title: "Github",
-        error: null,
-      },
+      props: { title: "GitHub", repos, user },
       revalidate: 3600,
     };
   } catch (error) {
     console.error(error);
+
     return {
       props: {
-        user: null,
-        repos: [],
         error: error.message || "An error occurred while fetching data.",
       },
+      revalidate: 3600,
     };
   }
 }

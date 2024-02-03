@@ -90,21 +90,17 @@ export const highlightSyntax = (word: string) => {
 };
 
 export const convertUrlsToLinks = (word: string): string => {
-  // Regex pour identifier les URLs
   const urlRegex =
     /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/gi;
 
   return word.replace(urlRegex, (url) => {
-    // Retourne le lien HTML pour chaque URL trouvée
     return `<a href="${url}" target="_blank" style="color: #569cd6; text-decoration: underline;">${url}</a>`;
   });
 };
 
 export const integrateGithubData = (word: string, user: any) => {
-  if (!user) return word; // Return the original word if user data is not available
-  console.log(word);
+  if (!user) return word;
 
-  // Replace placeholders with actual user data
   return word
     .replace(/githubUsername/g, user.login || "Loading...")
     .replace(/nbRepos/g, user.public_repos || "0")
