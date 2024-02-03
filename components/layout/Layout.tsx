@@ -12,15 +12,16 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   const [terminalHeight, setTerminalHeight] = useState(100);
+  const [menuWidth, setMenuWidth] = useState(240);
 
-  const handleResizeStart = (e: any) => {
+  const handleTerminalResizeStart = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
     const startY = e.clientY;
     const startHeight = terminalHeight;
 
-    const doResize = (moveEvent: any) => {
-      const newHeight = startHeight + (startY - moveEvent.clientY);
-      setTerminalHeight(Math.max(newHeight, 30));
+    const doResize = (moveEvent: MouseEvent) => {
+      const newHeight = startHeight - (moveEvent.clientY - startY);
+      setTerminalHeight(Math.max(newHeight, 30)); // Set minimum height for the terminal
     };
 
     const stopResize = () => {
@@ -31,6 +32,26 @@ const Layout = ({ children }: Props) => {
     window.addEventListener("mousemove", doResize);
     window.addEventListener("mouseup", stopResize);
   };
+
+  const handleMenuResizeStart = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    const startX = e.clientX;
+    const startWidth = menuWidth;
+
+    const doResize = (moveEvent: MouseEvent) => {
+      const newWidth = startWidth + (moveEvent.clientX - startX);
+      setMenuWidth(Math.max(newWidth, 180)); // Set minimum width for the menu
+    };
+
+    const stopResize = () => {
+      window.removeEventListener("mousemove", doResize);
+      window.removeEventListener("mouseup", stopResize);
+    };
+
+    window.addEventListener("mousemove", doResize);
+    window.addEventListener("mouseup", stopResize);
+  };
+
   return (
     <div className="flex flex-col h-screen w-full">
       <Topbar />
@@ -38,17 +59,29 @@ const Layout = ({ children }: Props) => {
         <div className="flex-none w-16 phone:hidden landscape:block resize-none hover:resize">
           <Sidebar />
         </div>
-        <div className="flex-none w-2/12 phone:w-4/12 landscape:w-3/12 ipadLandscape:w-2/12 resize-none hover:resize">
+
+        <div className="relative" style={{ width: `${menuWidth}px` }}>
           <Menu />
+          <div
+            className="cursor-ew-resize bg-topbar-secondVariant hidden ipadLandscape:block"
+            onMouseDown={handleMenuResizeStart}
+            style={{
+              width: "2px",
+              height: "100%",
+              position: "absolute",
+              right: 0,
+              top: 0,
+            }}
+          />
         </div>
+
         <div className="grow flex flex-col">
           <Main>{children}</Main>
           <div
             className="w-full cursor-ns-resize bg-topbar-secondVariant hidden ipadLandscape:block"
-            onMouseDown={handleResizeStart} // Set the mousedown event handler
+            onMouseDown={handleTerminalResizeStart} // Set the mousedown event handler
             style={{ height: "2px" }} // The height of the draggable area
           />
-          {/* Terminal area */}
 
           <div
             className="terminal bg-main-background text-white hidden ipadLandscape:block"

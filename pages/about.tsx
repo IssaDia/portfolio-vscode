@@ -17,7 +17,6 @@ const codeSnippet = `<!DOCTYPE html>
 </html>`;
 
 const About = () => {
-  // Votre extrait de code
   return (
     <div>
       <CodeBlock

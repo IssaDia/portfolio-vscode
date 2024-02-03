@@ -19,8 +19,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "pages/github.jsx",
-    "pages/articles.jsx",
+    "pages/github.tsx",
+    "pages/articles.tsx",
     "hooks/useGithubData.js",
     "hooks/useMediumArticles.js"
   ],
