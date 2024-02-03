@@ -12,17 +12,11 @@ import {
   convertUrlsToLinks,
   integrateGithubData,
 } from "../../utils/helpers/helpers";
-import useGithubData from "../../hooks/useGithubData";
 
-const CodeBlock: React.FC<CodeBlockProps> = ({
-  numberOfLines,
-  codeSnippet,
-  type,
-  user,
-}) => {
+const CodeBlock = ({ numberOfLines, codeSnippet, type, user }) => {
   const codeSnippetLines = codeSnippet.split("\n").slice(0, numberOfLines);
 
-  const renderColoredText = (text: string): string => {
+  const renderColoredText = (text) => {
     let escapedText = escapeHtml(text);
 
     switch (type) {
