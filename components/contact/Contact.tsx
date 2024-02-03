@@ -19,7 +19,7 @@ const EmailTemplate = () => {
     const data = await res.json();
 
     if (res.ok) {
-      alert("Your response has been received!");
+      alert("Your email has been sent!");
       setName("");
       setEmail("");
       setSubject("");
@@ -30,13 +30,6 @@ const EmailTemplate = () => {
   };
   return (
     <div className="p-6 bg-main-background rounded-lg shadow-md">
-      <div className="flex flex-row items-center text-menu-firstVariant mb-4 space-x-2">
-        <h2 className="text-xs uppercase font-bold text-menu-firstVariant">
-          Slide up to contact me
-        </h2>
-
-        <span className="text-xl"> 🤷🏽‍♂️</span>
-      </div>
       <form onSubmit={submitForm} className="space-y-4 justify-center">
         <input
           className="w-full p-2 rounded bg-sidebar-background text-white placeholder-gray-300"

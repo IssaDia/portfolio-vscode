@@ -84,10 +84,17 @@ const Layout = ({ children }: Props) => {
           />
 
           <div
-            className="terminal bg-main-background text-white hidden ipadLandscape:block"
+            className="terminal bg-main-background text-white hidden ipadLandscape:block overflow-hidden"
             style={{ height: `${terminalHeight}px` }}
           >
             <div className="z-10">
+              <div className="flex flex-row items-center text-menu-firstVariant mb-4 space-x-2 m-2">
+                <h2 className="text-xs uppercase font-bold text-menu-firstVariant">
+                  Slide up to contact me
+                </h2>
+
+                <span className="text-xl"> 🤷🏽‍♂️</span>
+              </div>
               <Contact />
             </div>
           </div>
