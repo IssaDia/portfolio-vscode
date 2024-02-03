@@ -66,7 +66,8 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
           .join(" ");
         break;
       case "json":
-        escapedText = escapedText;
+        escapedText = escapedText.split(" ").map(convertUrlsToLinks).join(" ");
+
         break;
       default:
         break;

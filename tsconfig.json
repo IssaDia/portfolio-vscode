@@ -21,7 +21,8 @@
     "**/*.tsx",
     "pages/github.jsx",
     "pages/articles.jsx",
-    "hooks/useGithubData.js"
+    "hooks/useGithubData.js",
+    "hooks/useMediumArticles.js"
   ],
   "exclude": ["node_modules"]
 }
