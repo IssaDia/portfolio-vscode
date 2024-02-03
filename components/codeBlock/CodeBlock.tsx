@@ -22,12 +22,6 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
   const codeSnippetLines = codeSnippet.split("\n").slice(0, numberOfLines);
   const { user } = useGithubData();
 
-  if (!user) {
-    return <div>Loading user data...</div>; // or any other loading indicator
-  }
-
-  console.log(user);
-
   const renderColoredText = (text: string): string => {
     let escapedText = escapeHtml(text);
 
