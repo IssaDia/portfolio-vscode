@@ -18,9 +18,9 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
   numberOfLines,
   codeSnippet,
   type,
+  user,
 }) => {
   const codeSnippetLines = codeSnippet.split("\n").slice(0, numberOfLines);
-  const { user } = useGithubData();
 
   const renderColoredText = (text: string): string => {
     let escapedText = escapeHtml(text);
