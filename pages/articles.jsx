@@ -2,66 +2,51 @@ import Image from "next/image";
 import Link from "next/link";
 import Parser from "rss-parser";
 
-const ArticlesPage = ({ articles }) => {
+const codeSnippet = `<template>
+  <div class = "github" >
+    <h1>My Github Projects</h1>
+    <ul>
+      <li v-for= "project in projects" :key = "project.id" >
+        <h2>{{ project.name }}</h2>
+        <p>{{ project.description }}</p>
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script setup >
+import { ref , onMounted } from "vue" ;
+
+const projects = ref([]);
+
+onMounted ( async ( ) => {
+  const response = await fetch('https://github.com/IssaDia');
+  const data = await response.json();
+  projects.value = data;
+} ) ;
+</script>
+
+<style scoped >
+.github {
+  username: githubUsername ;
+  repos : nbRepos ;
+  followers : nbFollowers ;
+}
+</style>
+`;
+
+const ArticlesPage = () => {
   return (
     <>
-      <div className="p-4">
-        <h1 className="uppercase text-sm brightness-150 my-4 text-center cursor-pointer">
-          Recent Posts from Medium
-        </h1>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-        {articles.map((article, index) => (
-          <div
-            key={index}
-            className="bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg border-none"
-          >
-            <Image
-              src="/images/medium.jpeg"
-              alt="medium logo"
-              width={500}
-              height={300}
-              className="w-full"
-            />
-            <div className="p-4  h-24 mb-1">
-              <Link href={article.link}>
-                <h2 className="brightness-150 font-bold text-l mb-2 h-12 phone:text-xs landscape:text-sm">
-                  {article.title}
-                </h2>
-                <p className="brightness-150 text-sm h4">{article.creator}</p>
-              </Link>
-            </div>
-          </div>
-        ))}
+      <div className="cursor-pointer overflow-y-auto overflow-x-auto">
+        <CodeBlock
+          numberOfLines={codeSnippet.split("\n").length}
+          codeSnippet={codeSnippet}
+          type="json"
+        />
       </div>
     </>
   );
 };
-
-export async function getStaticProps() {
-  const parser = new Parser();
-  const feedUrl = `https://medium.com/feed/@issadia`;
-
-  try {
-    const feed = await parser.parseURL(feedUrl);
-    const articles = feed.items.slice(0, 6);
-    return {
-      props: {
-        articles: articles,
-        title: "Articles",
-      },
-      revalidate: 3600,
-    };
-  } catch (error) {
-    console.error(error);
-    return {
-      props: {
-        articles: [],
-        error: "Failed to fetch articles.",
-        title: "Articles",
-      },
-    };
-  }
-}
 
 export default ArticlesPage;

@@ -20,7 +20,8 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/github.jsx",
-    "pages/articles.jsx"
+    "pages/articles.jsx",
+    "hooks/useGithubData.js"
   ],
   "exclude": ["node_modules"]
 }

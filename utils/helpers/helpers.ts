@@ -49,8 +49,8 @@ export const highlightCSSComment = (line: string): string => {
 
 export const highlightCSSClass = (line: string): string => {
   return line.replace(
-    /^\.(\w+)/,
-    `<span style="color: #d7ba7d;">${line}</span> `
+    /^\.(\w+)/g,
+    `<span style="color: #d7ba7d;">${line}</span>`
   );
 };
 
@@ -98,4 +98,15 @@ export const convertUrlsToLinks = (word: string): string => {
     // Retourne le lien HTML pour chaque URL trouvée
     return `<a href="${url}" target="_blank" style="color: #569cd6; text-decoration: underline;">${url}</a>`;
   });
+};
+
+export const integrateGithubData = (word: string, user: any) => {
+  if (!user) return word; // Return the original word if user data is not available
+  console.log(word);
+
+  // Replace placeholders with actual user data
+  return word
+    .replace(/githubUsername/g, user.login || "Loading...")
+    .replace(/nbRepos/g, user.public_repos || "0")
+    .replace(/nbFollowers/g, user.followers || "0");
 };

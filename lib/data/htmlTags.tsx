@@ -34,4 +34,5 @@ export const htmlTags: string[] = [
   "title",
   "script",
   "template",
+  "style",
 ];

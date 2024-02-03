@@ -10,7 +10,9 @@ import {
   highlightCSSKey,
   highlightCSSValue,
   convertUrlsToLinks,
+  integrateGithubData,
 } from "../../utils/helpers/helpers";
+import useGithubData from "../../hooks/useGithubData";
 
 const CodeBlock: React.FC<CodeBlockProps> = ({
   numberOfLines,
@@ -18,6 +20,13 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
   type,
 }) => {
   const codeSnippetLines = codeSnippet.split("\n").slice(0, numberOfLines);
+  const { user } = useGithubData();
+
+  if (!user) {
+    return <div>Loading user data...</div>; // or any other loading indicator
+  }
+
+  console.log(user);
 
   const renderColoredText = (text: string): string => {
     let escapedText = escapeHtml(text);
@@ -45,12 +54,19 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
       case "vue":
         escapedText = escapedText.split(" ").map(highlightSyntax).join(" ");
         escapedText = escapedText.split(" ").map(highlightHtmlTags).join(" ");
+        escapedText = escapedText.split(" ").map(highlightCSSClass).join(" ");
         escapedText = escapedText
           .split(" ")
           .map(highlightParenthesisWords)
           .join(" ");
-        escapedText = escapedText.split(" ").map(highlightCSSClass).join(" ");
         escapedText = escapedText.split(" ").map(convertUrlsToLinks).join(" ");
+        escapedText = escapedText
+          .split(" ")
+          .map((word) => integrateGithubData(word, user))
+          .join(" ");
+        break;
+      case "json":
+        escapedText = escapedText;
         break;
       default:
         break;
@@ -65,7 +81,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
           <div key={index} className="text-xs ipadLandscape:text-sm">
             <span className="text-gray-400 p-2 m-2">{index + 1}</span>
             <span
-              className="ml-4"
+              className="ml-2"
               dangerouslySetInnerHTML={{ __html: renderColoredText(line) }}
             />
           </div>
