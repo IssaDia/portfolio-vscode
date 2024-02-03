@@ -22,7 +22,9 @@
     "pages/github.jsx",
     "pages/articles.jsx",
     "hooks/useGithubData.js",
-    "hooks/useMediumArticles.js"
+    "hooks/useMediumArticles.js",
+    "components/codeBlock/CodeBlock.tsx",
+    "lib/interfaces/CodeBlock.jsx"
   ],
   "exclude": ["node_modules"]
 }

@@ -13,10 +13,15 @@ import {
   integrateGithubData,
 } from "../../utils/helpers/helpers";
 
-const CodeBlock = ({ numberOfLines, codeSnippet, type, user }) => {
+const CodeBlock: React.FC<CodeBlockProps> = ({
+  numberOfLines,
+  codeSnippet,
+  type,
+  user,
+}) => {
   const codeSnippetLines = codeSnippet.split("\n").slice(0, numberOfLines);
 
-  const renderColoredText = (text) => {
+  const renderColoredText = (text: string): string => {
     let escapedText = escapeHtml(text);
 
     switch (type) {

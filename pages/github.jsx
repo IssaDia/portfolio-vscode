@@ -79,6 +79,8 @@ export async function getStaticProps() {
         repo.topics.some((topic) => allowedTopics.includes(topic))
     );
 
+    console.log(user);
+
     return {
       props: {
         user,
