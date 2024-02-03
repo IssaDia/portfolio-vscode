@@ -1,9 +1,18 @@
 export const syntaxHighlighting = {
-  keywords: ["import", "from", "{", "}", "export", "default", "return"],
+  keywords: [
+    "import",
+    "from",
+    "{",
+    "}",
+    "export",
+    "default",
+    "return",
+    "await",
+  ],
   modulePath: ['"./SkillList";'],
   typesAndInterfaces: ["boolean;", "SoftSkillProps", "TechSkillProps"],
   punctuation: [";"],
-  structural: ["interface", "const", "=>", "[]", "{", "}"],
+  structural: ["interface", "const", "=>", "[]", "{", "}", "async"],
   identifiers: [
     "SkillList",
     "techSkills",
@@ -16,6 +25,13 @@ export const syntaxHighlighting = {
     "name",
     "content",
     "html",
+    "class",
+    "target",
+    ":key",
+    "setup",
+    "ref",
+    "onMounted",
+    "scoped",
   ],
   controlFlow: ["(", ")", "Profile"],
   properties: [
@@ -34,5 +50,7 @@ export const syntaxHighlighting = {
     "git:",
     "testing:",
     "apiIntegration:",
+    "response",
+    "data",
   ],
 };
