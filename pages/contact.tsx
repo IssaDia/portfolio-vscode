@@ -16,7 +16,6 @@ const ContactPage = () => {
   return (
     <>
       <div className="cursor-pointer">
-        <p>1</p>
         <CodeBlock
           numberOfLines={codeSnippet.split("\n").length}
           codeSnippet={codeSnippet}

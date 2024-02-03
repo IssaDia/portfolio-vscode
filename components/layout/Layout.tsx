@@ -40,7 +40,7 @@ const Layout = ({ children }: Props) => {
 
     const doResize = (moveEvent: MouseEvent) => {
       const newWidth = startWidth + (moveEvent.clientX - startX);
-      setMenuWidth(Math.max(newWidth, 180)); // Set minimum width for the menu
+      setMenuWidth(Math.max(newWidth, 180));
     };
 
     const stopResize = () => {

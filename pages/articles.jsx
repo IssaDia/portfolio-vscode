@@ -31,7 +31,7 @@ export async function getStaticProps() {
     const feed = await parser.parseURL(mediumURL);
     const articles = feed.items.map((item) => ({
       title: item.title,
-      link: item.link,
+      link: item.guid,
     }));
 
     return {
