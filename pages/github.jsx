@@ -1,6 +1,37 @@
-import Link from "next/link";
-import GitHubCalendar from "react-github-calendar";
-import Image from "next/image";
+import CodeBlock from "../components/codeBlock/CodeBlock";
+
+const codeSnippet = `<template>
+  <div class = "github-projects" >
+    <h1>My Github Projects</h1>
+    <ul>
+      <li v-for= "project in projects" :key = "project.id" >
+        <h2>{{ project.name }}</h2>
+        <p>{{ project.description }}</p>
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script setup >
+import { ref , onMounted } from "vue" ;
+
+const projects = ref([]);
+
+onMounted ( async ( ) => {
+  const response = await fetch('https://github.com/IssaDia');
+  const data = await response.json();
+  projects.value = data;
+} ) ;
+</script>
+
+<style scoped >
+.github-projects {
+  username: IssaDia;
+  nbRepos : 30;
+  followers : 0;
+}
+</style>
+`;
 
 const GithubPage = ({ repos, user, error }) => {
   if (error) {
@@ -8,71 +39,12 @@ const GithubPage = ({ repos, user, error }) => {
   }
   return (
     <>
-      <div className="p-8 overflow-scroll ipadLandscape:w-full">
-        <div className="flex flex-col items-center justify-center mb-6 bg-sidebar-background h-32 rounded-sm w-full cursor-pointer">
-          <div className="flex items-center space-x-4 phone:flex-col phone:space-x-0 phone:space-y-2 landscape:flex-row landscape:justify-between">
-            <Image
-              src="/images/issa-profile-pic.JPEG"
-              alt="avatar"
-              width={80}
-              height={80}
-              className="rounded-sm phone:hidden landscape:block"
-            />{" "}
-            <div className="landscape:border-r landscape:border-topbar-firstButton px-2">
-              <p className="text-xs">{user.login}</p>
-            </div>
-            <div className="landscape:border-r landscape:border-topbar-firstButton px-2">
-              <p className="text-xs">{user.public_repos} repos </p>
-            </div>
-            <div className="px-2">
-              <p className="text-xs">{user.following} following</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="p-4">
-          <h1 className="uppercase text-sm brightness-150 my-4 text-center cursor-pointer">
-            Featured Github Projects
-          </h1>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-hidden">
-          {repos.map((repo) => (
-            <div key={repo.id} className="bg-sidebar-background p-4">
-              <Link
-                key={repo.id}
-                href={repo.html_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className=" p-4 rounded-lg cursor-pointer"
-              >
-                <div className="font-bold text-l mb-2 text-topbar-firstButton">
-                  {repo.name.toUpperCase()}
-                </div>
-                <p className="text-white text-sm">{repo.description}</p>
-                <div className="flex items-center justify-between mt-4">
-                  <div className="flex items-center">
-                    {repo.topics.map((topic) => (
-                      <span
-                        key={topic}
-                        className="bg-topbar-firstButton text-xs font-semibold mr-2 px-1.5 py-1.5 rounded dark:bg-green-700 dark:text-green-200 phone:hidden"
-                      >
-                        {topic}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </Link>
-            </div>
-          ))}
-        </div>
-        <div className="my-4 bg-sidebar-background p-4 rounded-sm w-full cursor-pointer landscape:w-full phone:hidden ipadLandscape:block">
-          <GitHubCalendar
-            username={process.env.NEXT_PUBLIC_GITHUB_USERNAME || ""}
-            hideColorLegend
-            hideMonthLabels
-          />
-        </div>
+      <div className="cursor-pointer overflow-y-auto overflow-x-auto">
+        <CodeBlock
+          numberOfLines={codeSnippet.split("\n").length}
+          codeSnippet={codeSnippet}
+          type="vue"
+        />
       </div>
     </>
   );

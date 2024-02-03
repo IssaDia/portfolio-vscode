@@ -9,6 +9,7 @@ import {
   highlightCSSClass,
   highlightCSSKey,
   highlightCSSValue,
+  convertUrlsToLinks,
 } from "../../utils/helpers/helpers";
 
 const CodeBlock: React.FC<CodeBlockProps> = ({
@@ -28,6 +29,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
           .split(" ")
           .map(highlightParenthesisWords)
           .join(" ");
+        escapedText = escapedText.split(" ").map(highlightSyntax).join(" ");
         break;
       case "css":
         escapedText = highlightCSSComment(escapedText);
@@ -35,12 +37,21 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
         escapedText = escapedText.split(" ").map(highlightCSSClass).join(" ");
         escapedText = escapedText.split(" ").map(highlightCSSKey).join(" ");
         escapedText = escapedText.split(" ").map(highlightCSSValue).join(" ");
-
         break;
       case "tsx":
         escapedText = escapedText.split(" ").map(highlightSyntax).join(" ");
         escapedText = escapedText.split(" ").map(highlightHtmlTags).join(" ");
-
+        break;
+      case "vue":
+        escapedText = escapedText.split(" ").map(highlightSyntax).join(" ");
+        escapedText = escapedText.split(" ").map(highlightHtmlTags).join(" ");
+        escapedText = escapedText
+          .split(" ")
+          .map(highlightParenthesisWords)
+          .join(" ");
+        escapedText = escapedText.split(" ").map(highlightCSSClass).join(" ");
+        escapedText = escapedText.split(" ").map(convertUrlsToLinks).join(" ");
+        break;
       default:
         break;
     }

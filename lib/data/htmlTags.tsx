@@ -32,4 +32,6 @@ export const htmlTags: string[] = [
   "!DOCTYPE",
   "meta",
   "title",
+  "script",
+  "template",
 ];
