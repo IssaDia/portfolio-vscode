@@ -10,7 +10,7 @@ const useGithubData = () => {
 
   useEffect(() => {
     const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME;
-    const token = process.env.NEXT_PUBLIC_GITHUB_API_KEY;
+    const token = process.env.NEXT_GITHUB_API_KEY;
     const fetchData = async () => {
       try {
         const headers = {
