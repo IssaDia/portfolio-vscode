@@ -1,10 +1,11 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useRef, useState } from "react";
 import Bottombar from "../bottombar/Bottombar";
 import Topbar from "../topbar/Topbar";
 import Main from "../main/Main";
 import Menu from "../menu/Menu";
 import Sidebar from "../sidebar/Sidebar";
 import Contact from "../contact/Contact";
+import Terminal from "../terminal/Terminal";
 
 interface Props {
   children?: ReactNode;
@@ -13,15 +14,36 @@ interface Props {
 const Layout = ({ children }: Props) => {
   const [terminalHeight, setTerminalHeight] = useState(100);
   const [menuWidth, setMenuWidth] = useState(240);
+  const terminalRef = useRef<HTMLDivElement>(null);
+  const mainRef = useRef<HTMLDivElement>(null);
 
   const handleTerminalResizeStart = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
+
     const startY = e.clientY;
-    const startHeight = terminalHeight;
+
+    // Calculez la distance initiale entre le haut du terminal et la position Y de la souris
 
     const doResize = (moveEvent: MouseEvent) => {
-      const newHeight = startHeight - (moveEvent.clientY - startY);
-      setTerminalHeight(Math.max(newHeight, 30)); // Set minimum height for the terminal
+      if (terminalRef.current) {
+        const newHeight = moveEvent.clientY - terminalRef?.current?.offsetTop;
+
+        setTerminalHeight(
+          -newHeight + startY + terminalRef?.current?.offsetTop
+        );
+
+        console.log(
+          -newHeight + startY,
+          moveEvent.clientY,
+          terminalRef?.current?.offsetTop
+        );
+      }
+
+      // setTerminalHeight(newHeight);
+      // console.log(newHeight, "newHeight");
+      // console.log(terminalHeight, "terminalHeight");
+      // console.log(startY, "startY");
+      // console.log(moveEvent.clientY, "moveEvent.clientY");
     };
 
     const stopResize = () => {
@@ -75,30 +97,12 @@ const Layout = ({ children }: Props) => {
           />
         </div>
 
-        <div className="grow flex flex-col">
+        <div className="grow flex flex-col" ref={mainRef}>
           <Main>{children}</Main>
-          <div
-            className="w-full cursor-ns-resize bg-topbar-secondVariant hidden ipadLandscape:block"
-            onMouseDown={handleTerminalResizeStart} // Set the mousedown event handler
-            style={{ height: "2px" }} // The height of the draggable area
-          />
 
-          <div
-            className="terminal bg-main-background text-white hidden ipadLandscape:block overflow-hidden"
-            style={{ height: `${terminalHeight}px` }}
-          >
-            <div className="z-10">
-              <div className="flex flex-row items-center text-menu-firstVariant mb-4 space-x-2 m-2">
-                <h2 className="text-xs uppercase font-bold text-menu-firstVariant">
-                  Slide up to contact me
-                </h2>
-
-                <span className="text-xl"> 🤷🏽‍♂️</span>
-              </div>
-              <Contact />
-            </div>
+          <div className="">
+            <Terminal />
           </div>
-          <div />
         </div>
       </div>
 

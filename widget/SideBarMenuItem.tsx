@@ -23,6 +23,7 @@ export const MenuItem = ({ image, name, path }: MenuItemI) => {
                   width={18}
                   height={18}
                   className="mr-2"
+                  style={{ width: "auto", height: "20px" }}
                 />
                 <p className="text-sm brightness-150 text-menu-firstVariant phone:text-xs ipadLandscape:text-sm">
                   {name}
