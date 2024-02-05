@@ -40,10 +40,11 @@ export const highlightParenthesisWords = (word: string) => {
   return word;
 };
 
-export const highlightCSSComment = (line: string): string => {
-  return line.replace(
-    /\*[\s\S]*?\*\/$/g,
-    `<span style="color: #6a9955;">${line}</span>`
+export const highlightCSSComment = (text: string): string => {
+  console.log(text);
+  return text.replace(
+    /[\s\S]*?\*\/$/g,
+    (match) => `<span style="color: #6a9955;">${text}</span>`
   );
 };
 
@@ -94,7 +95,7 @@ export const convertUrlsToLinks = (word: string): string => {
     /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/gi;
 
   return word.replace(urlRegex, (url) => {
-    return `<a href="${url}" target="_blank" style="color: #569cd6; text-decoration: underline;">${url}</a>`;
+    return `<a href="${url}" target="_blank" style="color: ${categoryColors.modulePath}; text-decoration: underline;">${url}</a>`;
   });
 };
 
@@ -105,4 +106,41 @@ export const integrateGithubData = (word: string, user: any) => {
     .replace(/githubUsername/g, user.login || "Loading...")
     .replace(/nbRepos/g, user.public_repos || "0")
     .replace(/nbFollowers/g, user.followers || "0");
+};
+
+export const highlightJSON = (text: string) => {
+  return text
+    .replace(
+      /^{\s*|\s*}$/g,
+      (match) => `<span style="color: yellow;">${match}</span>`
+    )
+
+    .replace(
+      /[{}]/g,
+      (match) =>
+        `<span style="color: ${categoryColors.structural};">${match}</span>`
+    )
+
+    .replace(
+      /^{/g,
+      `<span style="color: ${categoryColors.modulePath};">"$1"</span>`
+    )
+
+    .replace(
+      /"([^"]+)":/g,
+      `<span style="color: ${categoryColors.identifiers};">"$1"</span><span> : </span>`
+    )
+    .replace(
+      /"([^"]+)",/g,
+      `<span style="color: ${categoryColors.modulePath};">"$1"</span><span>,</span>`
+    )
+    .replace(
+      /: "([^"]+)"/g,
+      `: <span style="color: ${categoryColors.modulePath};">"$1"</span>`
+    )
+    .replace(/\[/g, `<span style="color: ${categoryColors.keywords};">[</span>`)
+    .replace(
+      /\]/g,
+      `<span style="color: ${categoryColors.keywords};">]</span>`
+    );
 };
