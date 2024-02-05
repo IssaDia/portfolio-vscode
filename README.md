@@ -42,9 +42,9 @@ I saw this kind of Vscode reproduction online and studied how it was structured.
   
 ## Why These Technologies?
 
-I chose React
+I selected React and Next.js for this project primarily due to their exceptional performance capabilities and the simplicity of deployment, particularly with Vercel.
 
-Technical Watch
+## Technical Watch
 
 - [Grafikart's tutorial for window resizing in JS] (https://youtu.be/JV7M9utl5QQ?si=535yJ8EQra6JjoCs)
 
