@@ -46,7 +46,7 @@ I selected React and Next.js for this project primarily due to their exceptional
 
 ## Technical Watch
 
-- [Grafikart's tutorial for window resizing in JS] (https://youtu.be/JV7M9utl5QQ?si=535yJ8EQra6JjoCs)
+- [Grafikart's tutorial for window resizing in JS](https://youtu.be/JV7M9utl5QQ?si=535yJ8EQra6JjoCs)
 
 ## Challenges
 
