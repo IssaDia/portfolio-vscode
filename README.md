@@ -6,16 +6,16 @@ A portfolio based on my VScode interface inspired by one I saw online. Dit it fr
 - [Goal](#goal)
 - [Methodology](#methodology)
 - [Build with](#-build-with)
-- [Development Environment] (#development-environment)
+- [Development Environment](#development-environment)
 - [Why These Technologies?](#why-these-technologies)
 - [Technical watch](#technical-watch)
-- [Challenges] (#challenges)
+- [Challenges](#challenges)
 - [Feedback](#feedback)
-- [Getting Started] (#getting-started)
-- [Prerequisites] (#prerequesites)
-- [Installation] (#installation)
-- [Running the Application] (#running-the-application)
-- [Future Improvements]
+- [Getting Started](#getting-started)
+- [Prerequisites](#prerequesites)
+- [Installation](#installation)
+- [Running the Application](#running-the-application)
+- [Future Improvements](#future-imporvments)
 
 ## Goal
 
