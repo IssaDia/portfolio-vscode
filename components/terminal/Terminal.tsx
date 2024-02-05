@@ -1,4 +1,3 @@
-// components/Terminal.js
 import React, { useEffect, useRef, useState } from "react";
 import interact from "interactjs";
 import Contact from "../contact/Contact";
@@ -25,25 +24,27 @@ const Terminal = () => {
         inertia: true,
       });
 
-      interact(".resize-handle").draggable({
-        listeners: {
-          start(event) {
-            event.target.setAttribute("data-start-y", event.clientY);
-            event.target.setAttribute("data-start-height", terminalHeight);
+      interact(".resize-handle")
+        .styleCursor(false)
+        .draggable({
+          listeners: {
+            start(event) {
+              event.target.setAttribute("data-start-y", event.clientY);
+              event.target.setAttribute("data-start-height", terminalHeight);
+            },
+            move(event) {
+              const startY = parseFloat(
+                event.target.getAttribute("data-start-y")
+              );
+              const startHeight = parseFloat(
+                event.target.getAttribute("data-start-height")
+              );
+              const deltaY = event.clientY - startY;
+              const newHeight = Math.max(startHeight - deltaY, 50);
+              setTerminalHeight(newHeight);
+            },
           },
-          move(event) {
-            const startY = parseFloat(
-              event.target.getAttribute("data-start-y")
-            );
-            const startHeight = parseFloat(
-              event.target.getAttribute("data-start-height")
-            );
-            const deltaY = event.clientY - startY;
-            const newHeight = Math.max(startHeight - deltaY, 80);
-            setTerminalHeight(newHeight);
-          },
-        },
-      });
+        });
     }
   }, [terminalHeight]);
 
@@ -54,7 +55,10 @@ const Terminal = () => {
         className="terminal overflow-hidden bottom-0 w-full"
         style={{ backgroundColor: "#333", height: `${terminalHeight}px` }}
       >
-        <div className="resize-handle flex flex-row items-center text-menu-firstVariant mb-4 space-x-2 m-2 cursor-pointer">
+        <div
+          className="resize-handle flex flex-row items-center text-menu-firstVariant mb-4 space-x-2 m-2 cursor-ns-resize"
+          style={{ cursor: "ns-resize" }}
+        >
           <h2 className="text-xs uppercase font-bold text-menu-firstVariant">
             Slide up to contact me
           </h2>
