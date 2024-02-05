@@ -7,6 +7,11 @@ const MenuItemsData: MenuItemI[] = [
     path: "/",
   },
   {
+    image: "vue_icon",
+    name: "github.vue",
+    path: "/github",
+  },
+  {
     image: "html_icon",
     name: "about.html",
     path: "/about",
@@ -21,11 +26,7 @@ const MenuItemsData: MenuItemI[] = [
   //   name: "projects.js",
   //   path: "/projects",
   // },
-  {
-    image: "vue_icon",
-    name: "github.vue",
-    path: "/github",
-  },
+
   {
     image: "json_icon",
     name: "articles.json",

@@ -3,8 +3,6 @@ import MenuItemI from "../lib/interfaces/MenuItemI";
 import Link from "next/link";
 import ActiveLink from "./activeLink/ActiveLink";
 import Image from "next/image";
-import { faTimes, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const TopMenuItem = ({ image, name, path }: MenuItemI) => {
   const [isHovered, setIsHovered] = React.useState(false);
@@ -31,6 +29,7 @@ const TopMenuItem = ({ image, name, path }: MenuItemI) => {
                     width={18}
                     height={18}
                     className="mr-2"
+                    style={{ width: "auto", height: "20px" }}
                   />
                   <p className="text-sm brightness-150 text-menu-firstVariant">
                     {name}

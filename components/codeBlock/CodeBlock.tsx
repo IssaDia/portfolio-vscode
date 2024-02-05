@@ -11,6 +11,7 @@ import {
   highlightCSSValue,
   convertUrlsToLinks,
   integrateGithubData,
+  highlightJSON,
 } from "../../utils/helpers/helpers";
 
 const CodeBlock: React.FC<CodeBlockProps> = ({
@@ -60,6 +61,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
         break;
       case "json":
         escapedText = escapedText.split(" ").map(convertUrlsToLinks).join(" ");
+        escapedText = highlightJSON(escapedText);
 
         break;
       default:
@@ -70,7 +72,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
 
   return (
     <>
-      <div className="font-mono overflow-x-auto overflow-y-auto whitespace-pre">
+      <div className="font-mono overflow-x-auto overflow-y-auto whitespace-pre mt-2">
         {codeSnippetLines.slice(0, numberOfLines).map((line, index) => (
           <div key={index} className="text-xs ipadLandscape:text-sm">
             <span className="text-gray-400 p-2 m-2">{index + 1}</span>
