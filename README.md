@@ -1,99 +1,102 @@
-My Next.js Application
-A full-stack application for managing a store, built with Next.js, integrating a variety of modern web technologies for a comprehensive development experience.
+# 🧑🏽‍💻 My VScode portfolio
 
-📜 Summary
-Goal
-Methodology
-Built With
-Development Environment
-Why These Technologies?
+A portfolio based on my VScode interface inspired by one I saw online. Dit it from scratch with React.
+
+# 📜 Summary
+- [Goal](#goal)
+- [Methodology](#methodology)
+- [Build with](#-build-with)
+- [Development Environment] (#development-environment)
+- [Why These Technologies?](#why-these-technologies)
+- [Technical watch](#technical-watch)
+- [Challenges] (#challenges)
+- [Feedback](#feedback)
+- [Getting Started] (#getting-started)
+- [Prerequisites] (#prerequesites)
+- [Installation] (#installation)
+- [Running the Application] (#running-the-application)
+- [Future Improvements]
+
+## Goal
+
+Have fun reproducing something I use almost everyday and show some of my skills in Frontend development.
+
+## Methodology
+
+I saw this kind of Vscode reproduction online and studied how it was structured. Then I took my actual Vscode as a model to reproduce it.
+
+## Built With
+
+- Next.js - The React framework for production.
+- TypeScript - A typed superset of JavaScript that compiles to plain JavaScript.
+- Tailwind CSS - A utility-first CSS framework for rapidly building custom designs.
+- ESLint - The pluggable linting utility for JavaScript and JSX.
+  
+## Development Environment
+
+- Editor: VSCode
+- OS: MacOS
+- Package Manager: NPM
+- API Testing: Postman
+- Version Control: Git
+  
+## Why These Technologies?
+
+I chose React
+
 Technical Watch
-Challenges
-Feedback
-Getting Started
-Prerequisites
-Installation
-Running the Application
-Future Improvements
-Goal
-To create a comprehensive solution for a retail store to manage stock through a simple yet effective website, allowing for the monitoring and management of purchase orders and inventory.
 
-Methodology
-The project is structured around CRUD operations, carefully designed to meet the business requirements, ensuring a seamless flow for managing purchase orders and inventory.
+- [Grafikart's tutorial for window resizing in JS] (https://youtu.be/JV7M9utl5QQ?si=535yJ8EQra6JjoCs)
 
-Built With
-Next.js - The React framework for production.
-TypeScript - A typed superset of JavaScript that compiles to plain JavaScript.
-Redux Toolkit - The official, opinionated, batteries-included toolset for efficient Redux development.
-Tailwind CSS - A utility-first CSS framework for rapidly building custom designs.
-Moment.js - A JavaScript library for parsing, validating, manipulating, and formatting dates.
-Node.js & Express - For the backend API.
-Jest - Delightful JavaScript Testing.
-ESLint - The pluggable linting utility for JavaScript and JSX.
-Development Environment
-Editor: VSCode
-OS: MacOS
-Package Manager: NPM
-API Testing: Postman
-Version Control: Git
-Why These Technologies?
-Chosen for their wide adoption in the industry, ease of use, and comprehensive documentation, these technologies provide a robust foundation for building scalable and maintainable web applications.
+## Challenges
 
-Technical Watch
-Regularly following the latest updates and best practices through official documentation, tutorials, and community discussions to stay updated with the evolving web development landscape.
+- set up functions to color different text depending on style of each extension
+- find the good way to resize a window 
 
-Challenges
-Designing an efficient data model for handling purchase orders and inventory.
-Learning and effectively utilizing Redux Toolkit in a Next.js application.
-Ensuring type safety and leveraging TypeScript's features for better code quality.
-Feedback
-This project has been an invaluable learning experience, particularly in understanding state management with Redux Toolkit and the intricacies of full-stack development with Next.js.
+## Getting Started
 
-Getting Started
-Prerequisites
+
+## Prerequisites
+
 Node.js v14.17.2 or higher
 NPM v6.14.15 or higher
-Installation
-Clone the repository and install dependencies for both frontend and backend:
 
-bash
-Copy code
-# Clone the repository
+## Installation
+
+Clone the repository and install dependencies:
+
+### Clone the repository
+
+```
 git clone <repository-url>
+```
 
-# Navigate to the frontend directory
-cd frontend
+### 📥 Install dependencies
 
-# Install dependencies
+```
 npm install
+```
 
-# Navigate to the backend directory
-cd ../backend
+### Start the development server
 
-# Install dependencies
-npm install
-Running the Application
-Frontend:
-
-bash
-Copy code
-# Start the development server
+```
 npm run dev
-Backend:
+```
 
-bash
-Copy code
-# Start the backend server
-npm run serve
-Environment Configuration
-Create a .env.local file in the root of your project and add your MongoDB connection string:
+## Environment Configuration
+Create a .env.local file in the root of your project and fill the file with informations : 
 
-env
-Copy code
-MONGO_DB_URI=your_mongodb_connection_string_here
-Future Improvements
-Refining the UI/UX for a more intuitive experience.
-Enhancing the data model for better scalability.
-Implementing comprehensive unit and integration tests.
-Optimizing performance and accessibility.
-This documentation serves as a starting point for developers looking to understand and contribute to the project, providing insights into the goals, challenges, and the technology stack used.
+```
+NEXT_PUBLIC_GITHUB_USERNAME=
+NEXT_GITHUB_API_KEY=
+NEXT_RESEND_API_KEY=
+NEXT_PERSONAL_EMAIL=
+```
+
+## Future Improvements
+
+
+- add new functionnalities to look more like a vscode interface
+- improve styling color text depending on extension
+- implement comprehensive unit and integration tests.
+- optimize performance and accessibility.
