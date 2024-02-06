@@ -4,7 +4,7 @@ const codeSnippet = `<template>
   <div class = "github" >
     <h1>My Github Projects</h1>
     <ul>
-      <li v-for= "project in projects" :key = "project.id" >
+      <li v-for = "project in projects" :key = "project.id" >
         <h2>{{ project.name }}</h2>
         <p>{{ project.description }}</p>
       </li>
