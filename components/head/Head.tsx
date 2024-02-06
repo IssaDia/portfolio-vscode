@@ -17,6 +17,11 @@ const CustomHead = ({ title }: CustomHeadProps) => {
         content="issa dia, issa, dia, web developer portfolio, issa web developer, issa frontend developer, issa dia portfolio, vscode-portfolio"
       />
       <meta property="og:title" content="Issa Dia's Portfolio" />
+      <meta
+        property="og:description"
+        content="My portfolio based on my VScode interface"
+      />
+      <meta property="og:image" content="https://postimg.cc/bG3StTpZ" />
     </Head>
   );
 };

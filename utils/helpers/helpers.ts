@@ -20,6 +20,7 @@ export const highlightHtmlTags = (word: string) => {
 
   if (htmlTagMatch) {
     const tag = htmlTagMatch[2];
+    console.log(tag);
 
     const color = htmlTags.includes(tag) ? "#569cd6" : "#4dc9b0";
     return word.replace(tag, `<span style="color: ${color};">${tag}</span>`);
@@ -92,8 +93,7 @@ export const highlightSyntax = (word: string) => {
 
 export const convertUrlsToLinks = (word: string): string => {
   const urlRegex =
-    /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/gi;
-
+    /"?\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|]"?/gi;
   return word.replace(urlRegex, (url) => {
     return `<a href="${url}" target="_blank" style="color: ${categoryColors.modulePath}; text-decoration: underline;">${url}</a>`;
   });
@@ -122,21 +122,14 @@ export const highlightJSON = (text: string) => {
     )
 
     .replace(
-      /^{/g,
-      `<span style="color: ${categoryColors.modulePath};">"$1"</span>`
-    )
-
-    .replace(
       /"([^"]+)":/g,
-      `<span style="color: ${categoryColors.identifiers};">"$1"</span><span> : </span>`
+      (match) =>
+        `<span style="color: ${categoryColors.identifiers};">${match}</span>`
     )
     .replace(
-      /"([^"]+)",/g,
-      `<span style="color: ${categoryColors.modulePath};">"$1"</span><span>,</span>`
-    )
-    .replace(
-      /: "([^"]+)"/g,
-      `: <span style="color: ${categoryColors.modulePath};">"$1"</span>`
+      /"([^"]+)"\W$/g,
+      (match) =>
+        `<span style="color: ${categoryColors.modulePath};">${match}</span>`
     )
     .replace(/\[/g, `<span style="color: ${categoryColors.keywords};">[</span>`)
     .replace(
